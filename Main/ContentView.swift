@@ -327,10 +327,11 @@ class SplashViewModel: ObservableObject {
     
     init() {
         // Setup notification observers
-        NotificationCenter.default.addObserver(self, selector: #selector(handleConversionData(_:)), name: NSNotification.Name("ConversionDataReceived"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleConversionError(_:)), name: NSNotification.Name("ConversionDataFailed"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleFCMToken(_:)), name: NSNotification.Name("FCMTokenUpdated"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(retryConfig), name: NSNotification.Name("RetryConfig"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(handleConversionData(_:)), name: NSNotification.Name("ConversionDataReceived"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(handleConversionError(_:)), name: NSNotification.Name("ConversionDataFailed"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(handleFCMToken(_:)), name: NSNotification.Name("FCMTokenUpdated"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(handleNotificationURL(_:)), name: NSNotification.Name("LoadTempURL"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(retryConfig), name: NSNotification.Name("RetryConfig"), object: nil)
         
         // Start processing
         checkInternetAndProceed()
@@ -372,14 +373,18 @@ class SplashViewModel: ObservableObject {
     }
     
     @objc private func handleNotificationURL(_ notification: Notification) {
-        guard let userInfo = notification.userInfo as? [String: Any],
-              let tempUrl = userInfo["tempUrl"] as? String else {
+                guard let tempUrl = notification.userInfo?["tempUrl"] as? String else {
             return
         }
         
         DispatchQueue.main.async {
-            self.webViewURL = URL(string: tempUrl)!
+            guard let parsedURL = URL(string: tempUrl) else {
+                return
+            }
+            self.webViewURL = parsedURL
             self.currentScreen = .webView
+            UserDefaults.standard.set(tempUrl, forKey: "saved_url")
+            UserDefaults.standard.removeObject(forKey: "temp_url")
         }
     }
     
@@ -700,7 +705,7 @@ struct MainApp: App {
 //struct ContentView: View {
 //    @EnvironmentObject var appState: AppState
 //    @State private var selectedTab: String = "home"
-//    
+//
 //    var body: some View {
 //        TabView(selection: $selectedTab) {
 //            HomeDashboardView(selectedTab: $selectedTab)
@@ -1097,7 +1102,10 @@ struct MainBrowserView: UIViewRepresentable {
     }
     
     func updateUIView(_ browser: WKWebView, context: Context) {
-        // browser.load(URLRequest(url: destinationLink))
+        // Re-load only when the requested URL actually changes.
+        if browser.url?.absoluteString != destinationLink.absoluteString {
+            browser.load(URLRequest(url: destinationLink))
+        }
     }
     
     func makeCoordinator() -> BrowserDelegateManager {
@@ -1145,15 +1153,17 @@ struct CoreInterfaceView: View {
         }
         .preferredColorScheme(.dark)
         .onAppear {
-            intercaceUrl = UserDefaults.standard.string(forKey: "temp_url") ?? (UserDefaults.standard.string(forKey: "saved_url") ?? "")
-            if let l = UserDefaults.standard.string(forKey: "temp_url"), !l.isEmpty {
-                UserDefaults.standard.set(nil, forKey: "temp_url")
+            if let temp = UserDefaults.standard.string(forKey: "temp_url"), !temp.isEmpty {
+                intercaceUrl = temp
+                UserDefaults.standard.removeObject(forKey: "temp_url")
+            } else {
+                intercaceUrl = UserDefaults.standard.string(forKey: "saved_url") ?? ""
             }
         }
-        .onReceive(NotificationCenter.default.publisher(for: Notification.Name("LoadTempURL"))) { _ in
-            if (UserDefaults.standard.string(forKey: "temp_url") ?? "") != "" {
-                intercaceUrl = UserDefaults.standard.string(forKey: "temp_url") ?? ""
-                UserDefaults.standard.set(nil, forKey: "temp_url")
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name("LoadTempURL"))) { notification in
+            if let tempUrl = (notification.userInfo?["tempUrl"] as? String), !tempUrl.isEmpty {
+                intercaceUrl = tempUrl
+                UserDefaults.standard.removeObject(forKey: "temp_url")
             }
         }
     }
