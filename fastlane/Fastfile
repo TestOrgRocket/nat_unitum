@@ -93,7 +93,7 @@ platform :ios do
       increment_build_number(build_number: next_build)
     end
 
-    ext_info_plist = Dir[File.join(repo_root, "ImageNotificationServiceExt", "**/Info.plist")].first
+    ext_info_plist = Dir[File.join(repo_root, "notifications", "**/Info.plist")].first
     if ext_info_plist && File.exist?(ext_info_plist)
       set_info_plist_value(path: ext_info_plist, key: "CFBundleVersion", value: next_build.to_s)
     end
@@ -105,7 +105,7 @@ platform :ios do
     ext_profile   = ENV["sigh_#{ext_bundle}_appstore_profile-name"]
 
     main_target  = ENV["IOS_MAIN_TARGET"].to_s.empty? ? scheme : ENV["IOS_MAIN_TARGET"]
-    notif_target = ENV["IOS_NOTIF_TARGET"].to_s.empty? ? "ImageNotificationServiceExt" : ENV["IOS_NOTIF_TARGET"]
+    notif_target = ENV["IOS_NOTIF_TARGET"].to_s.empty? ? "notifications" : ENV["IOS_NOTIF_TARGET"]
 
     project_or_workspace_path = project_path || workspace_path
 
