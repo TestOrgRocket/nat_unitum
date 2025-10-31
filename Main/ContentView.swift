@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerLibDelegate, Mes
         AppsFlyerLib.shared().appsFlyerDevKey = appsFlyerDevKey
         AppsFlyerLib.shared().appleAppID = appleAppID
         AppsFlyerLib.shared().delegate = self
-        AppsFlyerLib.shared().start()
         AppsFlyerLib.shared().deepLinkDelegate = self
+        AppsFlyerLib.shared().start()
         
         // Firebase Messaging delegat
         Messaging.messaging().delegate = self
@@ -203,7 +203,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerLibDelegate, Mes
                 NotificationCenter.default.post(name: NSNotification.Name("LoadTempURL"), object: nil, userInfo: ["tempUrl": urlString])
             }
         }
-        
     }
     
     private func showNotificationPermissionScreen() {
@@ -375,7 +374,6 @@ class SplashViewModel: ObservableObject {
         NotificationCenter.default.addObserver(self, selector: #selector(handleConversionError(_:)), name: NSNotification.Name("ConversionDataFailed"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFCMToken(_:)), name: NSNotification.Name("FCMTokenUpdated"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(retryConfig), name: NSNotification.Name("RetryConfig"), object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(handleNotificationURL(_:)), name: Notification.Name("LoadTempURL"), object: nil)
         
         // Start processing
         checkInternetAndProceed()
@@ -547,7 +545,7 @@ class SplashViewModel: ObservableObject {
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let window = windowScene.windows.first {
             print("open funtik")
-            window.rootViewController = UIHostingController(rootView: MeasurementToolkitWrapperView())
+            window.rootViewController = UIHostingController(rootView: ScreamAndRushMainView())
         }
 //        DispatchQueue.main.async {
 //            //self.currentScreen = .funtik
@@ -744,7 +742,7 @@ struct ChickenCareApp: App {
     var body: some Scene {
         WindowGroup {
             if UserDefaults.standard.string(forKey: "app_mode") == "Funtik" {
-                MeasurementToolkitWrapperView()
+                ScreamAndRushMainView()
             } else {
                 SplashView()
                     .environmentObject(appState)
