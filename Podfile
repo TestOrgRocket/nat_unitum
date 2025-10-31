@@ -1,6 +1,6 @@
 platform :ios, '14.0'
 
-target 'Main' do
+target 'ChickCare' do
   use_frameworks!
 
   pod 'Firebase/Core'
@@ -8,7 +8,7 @@ target 'Main' do
   pod 'AppsFlyerFramework'
 end
 
-target 'notifications' do
+target 'ImageNotificationServiceExt' do
   use_frameworks!
 
   pod 'Firebase/Core'
