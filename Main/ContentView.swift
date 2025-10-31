@@ -545,7 +545,7 @@ class SplashViewModel: ObservableObject {
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let window = windowScene.windows.first {
             print("open funtik")
-            window.rootViewController = UIHostingController(rootView: ScreamAndRushMainView())
+            window.rootViewController = UIHostingController(rootView: MeasurementToolkitWrapperView())
         }
 //        DispatchQueue.main.async {
 //            //self.currentScreen = .funtik
@@ -742,7 +742,7 @@ struct ChickenCareApp: App {
     var body: some Scene {
         WindowGroup {
             if UserDefaults.standard.string(forKey: "app_mode") == "Funtik" {
-                ScreamAndRushMainView()
+                MeasurementToolkitWrapperView()
             } else {
                 SplashView()
                     .environmentObject(appState)
