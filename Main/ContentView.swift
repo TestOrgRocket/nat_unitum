@@ -26,9 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerLibDelegate, Mes
         AppsFlyerLib.shared().appsFlyerDevKey = appsFlyerDevKey
         AppsFlyerLib.shared().appleAppID = appleAppID
         AppsFlyerLib.shared().delegate = self
-        AppsFlyerLib.shared().deepLinkDelegate = self
         AppsFlyerLib.shared().start()
-        
+        AppsFlyerLib.shared().deepLinkDelegate = self
         
         // Firebase Messaging delegat
         Messaging.messaging().delegate = self
@@ -200,7 +199,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerLibDelegate, Mes
         
         if let urlString = urlString {
             UserDefaults.standard.set(urlString, forKey: "temp_url")
-            PushLinkManager.shared.setURL(urlString)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                NotificationCenter.default.post(name: NSNotification.Name("LoadTempURL"), object: nil, userInfo: ["tempUrl": urlString])
+            }
         }
         
     }
@@ -374,6 +375,7 @@ class SplashViewModel: ObservableObject {
         NotificationCenter.default.addObserver(self, selector: #selector(handleConversionError(_:)), name: NSNotification.Name("ConversionDataFailed"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleFCMToken(_:)), name: NSNotification.Name("FCMTokenUpdated"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(retryConfig), name: NSNotification.Name("RetryConfig"), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(handleNotificationURL(_:)), name: Notification.Name("LoadTempURL"), object: nil)
         
         // Start processing
         checkInternetAndProceed()
@@ -1187,11 +1189,11 @@ extension BrowserDelegateManager {
 
 struct CoreInterfaceView: View {
     
-    @StateObject private var pushManager = PushLinkManager.shared
-
+    @State var intercaceUrl: String = ""
+    
     var body: some View {
         ZStack(alignment: .bottom) {
-            if let u = pushManager.url {
+            if let u = URL(string: intercaceUrl) {
                 MainBrowserView(
                     destinationLink: u
                 )
@@ -1199,27 +1201,18 @@ struct CoreInterfaceView: View {
         }
         .preferredColorScheme(.dark)
         .onAppear {
-            if let saved = UserDefaults.standard.string(forKey: "temp_url") {
-                pushManager.setURL(saved)
-                UserDefaults.standard.removeObject(forKey: "temp_url")
+            intercaceUrl = UserDefaults.standard.string(forKey: "temp_url") ?? (UserDefaults.standard.string(forKey: "saved_url") ?? "")
+            if let l = UserDefaults.standard.string(forKey: "temp_url"), !l.isEmpty {
+                UserDefaults.standard.set(nil, forKey: "temp_url")
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name("LoadTempURL"))) { _ in
+            if (UserDefaults.standard.string(forKey: "temp_url") ?? "") != "" {
+                intercaceUrl = UserDefaults.standard.string(forKey: "temp_url") ?? ""
+                UserDefaults.standard.set(nil, forKey: "temp_url")
             }
         }
     }
     
 }
 
-class PushLinkManager: ObservableObject {
-    static let shared = PushLinkManager()
-    
-    @Published var url: URL? = nil
-    
-    private init() {}
-    
-    func setURL(_ urlString: String) {
-        if let u = URL(string: urlString) {
-            DispatchQueue.main.async {
-                self.url = u
-            }
-        }
-    }
-}
