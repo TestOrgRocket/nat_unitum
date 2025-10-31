@@ -199,8 +199,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerLibDelegate, Mes
         
         if let urlString = urlString {
             UserDefaults.standard.set(urlString, forKey: "temp_url")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                NotificationCenter.default.post(name: NSNotification.Name("LoadTempURL"), object: nil, userInfo: ["tempUrl": urlString])
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(
+                    name: NSNotification.Name("LoadTempURL"),
+                    object: nil,
+                    userInfo: ["tempUrl": urlString]
+                )
             }
         }
     }
