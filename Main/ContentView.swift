@@ -7,7 +7,7 @@ import Network
 import AppTrackingTransparency
 import FirebaseCore
 
-class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerLibDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerLibDelegate, MessagingDelegate, UNUserNotificationCenterDelegate, DeepLinkDelegate {
     
     
     let appsFlyerDevKey = "rZAzaGEBkuVdYJyBoAYyQE"
@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerLibDelegate, Mes
         AppsFlyerLib.shared().appleAppID = appleAppID
         AppsFlyerLib.shared().delegate = self
         AppsFlyerLib.shared().start()
+        AppsFlyerLib.shared().deepLinkDelegate = self
         
         // Firebase Messaging delegat
         Messaging.messaging().delegate = self
@@ -58,6 +59,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerLibDelegate, Mes
         return true
     }
     
+    func didResolveDeepLink(_ result: DeepLinkResult) {
+        
+        switch result.status {
+        case .notFound:
+            AppsFlyerLib.shared().logEvent(name: "DeepLinkNotFound", values: nil)
+            return
+            
+        case .failure:
+            if let error = result.error {
+                AppsFlyerLib.shared().logEvent(name: "DeepLinkError", values: nil)
+            } else {
+                print("[AFSDK] Deep link error: unknown")
+                AppsFlyerLib.shared().logEvent(name: "DeepLinkError", values: nil)
+            }
+            return
+            
+        case .found:
+            AppsFlyerLib.shared().logEvent(name: "DeepLinkFound", values: nil)
+
+            guard let deepLink = result.deepLink else {
+                AppsFlyerLib.shared().logEvent(name: "NoDeepLinkData", values: nil)
+                print("[AFSDK] No deep link data")
+                return
+            }
+
+            // Проверка на deferred / direct
+            let isDeferred = deepLink.isDeferred ?? false
+            print(isDeferred ? "This is a deferred deep link" : "This is a direct deep link")
+
+            // Извлечение параметров диплинка
+            var deepLinkParams: [String: Any] = [:]
+
+            if let clickEventDict = (deepLink.clickEvent["click_event"] as? [String: Any]) {
+                deepLinkParams = clickEventDict
+            } else {
+                deepLinkParams = deepLink.clickEvent
+            }
+        
+            self.conversionData.merge(deepLinkParams) { (_, new) in new }
+        }
+    }
+    
     
     @objc private func activateApps() {
         AppsFlyerLib.shared().start()
@@ -69,15 +112,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerLibDelegate, Mes
     
     // AppsFlyer Delegate Methods
     func onConversionDataSuccess(_ data: [AnyHashable: Any]) {
-        conversionData = data
+        conversionData.merge(data) { (_, new) in new }
         NotificationCenter.default.post(name: Notification.Name("ConversionDataReceived"), object: nil, userInfo: ["conversionData": conversionData])
     }
     
     func onConversionDataFail(_ error: Error) {
         NotificationCenter.default.post(name: Notification.Name("ConversionDataReceived"), object: nil, userInfo: ["conversionData": [:]])
-        if UserDefaults.standard.string(forKey: "saved_url") == nil {
-            setModeToFuntik()
-        }
+//        if UserDefaults.standard.string(forKey: "saved_url") == nil {
+//            setModeToFuntik()
+//        }
     }
     
     private func handleConfigError() {
@@ -87,7 +130,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerLibDelegate, Mes
             }
         } else {
             setModeToFuntik()
-            print("setModeToFuntik")
         }
     }
     
@@ -303,10 +345,10 @@ struct NotificationPermissionView: View {
     }
 }
 
-//#Preview {
-//    ContentView( body: <#some View#>)
-//        .environmentObject(AppState())
-//}
+#Preview {
+    ContentView()
+        .environmentObject(AppState())
+}
 
 class SplashViewModel: ObservableObject {
     @Published var currentScreen: Screen = .loading
@@ -323,15 +365,15 @@ class SplashViewModel: ObservableObject {
         case webView
         case funtik
         case noInternet
+        case screamAndRush
     }
     
     init() {
         // Setup notification observers
-    NotificationCenter.default.addObserver(self, selector: #selector(handleConversionData(_:)), name: NSNotification.Name("ConversionDataReceived"), object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(handleConversionError(_:)), name: NSNotification.Name("ConversionDataFailed"), object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(handleFCMToken(_:)), name: NSNotification.Name("FCMTokenUpdated"), object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(handleNotificationURL(_:)), name: NSNotification.Name("LoadTempURL"), object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(retryConfig), name: NSNotification.Name("RetryConfig"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleConversionData(_:)), name: NSNotification.Name("ConversionDataReceived"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleConversionError(_:)), name: NSNotification.Name("ConversionDataFailed"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleFCMToken(_:)), name: NSNotification.Name("FCMTokenUpdated"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(retryConfig), name: NSNotification.Name("RetryConfig"), object: nil)
         
         // Start processing
         checkInternetAndProceed()
@@ -356,7 +398,8 @@ class SplashViewModel: ObservableObject {
     }
     
     @objc private func handleConversionData(_ notification: Notification) {
-        conversionData = (notification.userInfo ?? [:])["conversionData"] as? [AnyHashable: Any] ?? [:]
+        var pushData = (notification.userInfo ?? [:])["conversionData"] as? [AnyHashable: Any] ?? [:]
+        conversionData.merge(pushData) { (_, new) in new }
         processConversionData()
     }
     
@@ -373,18 +416,14 @@ class SplashViewModel: ObservableObject {
     }
     
     @objc private func handleNotificationURL(_ notification: Notification) {
-                guard let tempUrl = notification.userInfo?["tempUrl"] as? String else {
+        guard let userInfo = notification.userInfo as? [String: Any],
+              let tempUrl = userInfo["tempUrl"] as? String else {
             return
         }
         
         DispatchQueue.main.async {
-            guard let parsedURL = URL(string: tempUrl) else {
-                return
-            }
-            self.webViewURL = parsedURL
+            self.webViewURL = URL(string: tempUrl)!
             self.currentScreen = .webView
-            UserDefaults.standard.set(tempUrl, forKey: "saved_url")
-            UserDefaults.standard.removeObject(forKey: "temp_url")
         }
     }
     
@@ -502,13 +541,15 @@ class SplashViewModel: ObservableObject {
     private func setModeToFuntik() {
         UserDefaults.standard.set("Funtik", forKey: "app_mode")
         UserDefaults.standard.set(true, forKey: "hasLaunched")
-//        if let window = UIApplication.shared.windows.first {
-//            print("open funtik")
-//            window.rootViewController = AppModule.MeasurementToolkit()
-//        }
-        DispatchQueue.main.async {
-            self.currentScreen = .funtik
+        
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            print("open funtik")
+            window.rootViewController = UIHostingController(rootView: MeasurementToolkitWrapperView())
         }
+//        DispatchQueue.main.async {
+//            //self.currentScreen = .funtik
+//        }
     }
     
     private func handleNoInternet() {
@@ -602,14 +643,19 @@ struct SplashView: View {
                         CoreInterfaceView()
                         // MainBrowserView(destinationLink: url)
                     } else {
-                        MeasurementToolkitWrapperView()
+                        ContentView()
+                            .environmentObject(appState)
                     }
                 case .funtik:
-                    MeasurementToolkitWrapperView()
+                    ContentView()
+                        .environmentObject(appState)
                 case .noInternet:
                     NoInternetView {
                         NotificationCenter.default.post(name: NSNotification.Name("RetryConfig"), object: nil)
                     }
+                case .screamAndRush:
+                    ContentView()
+                        .environmentObject(appState)
                 }
             }
         }
@@ -688,25 +734,28 @@ struct SplashView: View {
 
 // Main App
 @main
-struct MainApp: App {
+struct ChickenCareApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var appState = AppState()
     
     var body: some Scene {
         WindowGroup {
-            SplashView()
-                .environmentObject(appState)
+            if UserDefaults.standard.string(forKey: "app_mode") == "Funtik" {
+                MeasurementToolkitWrapperView()
+            } else {
+                SplashView()
+                    .environmentObject(appState)
+            }
         }
     }
 }
 
-
-//struct ContentView: View {
-//    @EnvironmentObject var appState: AppState
-//    @State private var selectedTab: String = "home"
-//
-//    var body: some View {
+struct ContentView: View {
+    @EnvironmentObject var appState: AppState
+    @State private var selectedTab: String = "home"
+    
+    var body: some View {
 //        TabView(selection: $selectedTab) {
 //            HomeDashboardView(selectedTab: $selectedTab)
 //                .tabItem {
@@ -756,8 +805,8 @@ struct MainApp: App {
 //        .accentColor(.goldenOrange)
 //        .background(Color.warmWhite)
 //        .font(.system(.body, design: .rounded))
-//    }
-//}
+    }
+}
 
 struct OverviewCard: View {
     let title: String
@@ -1102,10 +1151,7 @@ struct MainBrowserView: UIViewRepresentable {
     }
     
     func updateUIView(_ browser: WKWebView, context: Context) {
-        // Re-load only when the requested URL actually changes.
-        if browser.url?.absoluteString != destinationLink.absoluteString {
-            browser.load(URLRequest(url: destinationLink))
-        }
+        // browser.load(URLRequest(url: destinationLink))
     }
     
     func makeCoordinator() -> BrowserDelegateManager {
@@ -1153,17 +1199,15 @@ struct CoreInterfaceView: View {
         }
         .preferredColorScheme(.dark)
         .onAppear {
-            if let temp = UserDefaults.standard.string(forKey: "temp_url"), !temp.isEmpty {
-                intercaceUrl = temp
-                UserDefaults.standard.removeObject(forKey: "temp_url")
-            } else {
-                intercaceUrl = UserDefaults.standard.string(forKey: "saved_url") ?? ""
+            intercaceUrl = UserDefaults.standard.string(forKey: "temp_url") ?? (UserDefaults.standard.string(forKey: "saved_url") ?? "")
+            if let l = UserDefaults.standard.string(forKey: "temp_url"), !l.isEmpty {
+                UserDefaults.standard.set(nil, forKey: "temp_url")
             }
         }
-        .onReceive(NotificationCenter.default.publisher(for: Notification.Name("LoadTempURL"))) { notification in
-            if let tempUrl = (notification.userInfo?["tempUrl"] as? String), !tempUrl.isEmpty {
-                intercaceUrl = tempUrl
-                UserDefaults.standard.removeObject(forKey: "temp_url")
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name("LoadTempURL"))) { _ in
+            if (UserDefaults.standard.string(forKey: "temp_url") ?? "") != "" {
+                intercaceUrl = UserDefaults.standard.string(forKey: "temp_url") ?? ""
+                UserDefaults.standard.set(nil, forKey: "temp_url")
             }
         }
     }
