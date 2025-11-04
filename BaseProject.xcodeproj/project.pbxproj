@@ -14,9 +14,7 @@
 		955312D72EB0B8AF001E25FA /* FirebaseMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955312D62EB0B8AF001E25FA /* FirebaseMessaging.framework */; };
 		955312DA2EB0B8B9001E25FA /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955312D92EB0B8B9001E25FA /* UserNotifications.framework */; };
 		955312DF2EB0BC10001E25FA /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955312DE2EB0BC10001E25FA /* FirebaseCore.framework */; };
-		955312E02EB0BC10001E25FA /* FirebaseCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955312DE2EB0BC10001E25FA /* FirebaseCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		955312E32EB0BC1A001E25FA /* FirebaseMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955312E22EB0BC1A001E25FA /* FirebaseMessaging.framework */; };
-		955312E42EB0BC1A001E25FA /* FirebaseMessaging.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955312E22EB0BC1A001E25FA /* FirebaseMessaging.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		955312E52EB0BC21001E25FA /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955312D92EB0B8B9001E25FA /* UserNotifications.framework */; };
 		AD2E1620EAE5C05A55325DD0 /* Pods_notifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8BDB67EB5FACD5A0588E86 /* Pods_notifications.framework */; };
 /* End PBXBuildFile section */
@@ -41,18 +39,6 @@
 				955312772EB0B70A001E25FA /* notifications.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		955312E12EB0BC10001E25FA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				955312E42EB0BC1A001E25FA /* FirebaseMessaging.framework in Embed Frameworks */,
-				955312E02EB0BC10001E25FA /* FirebaseCore.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -220,7 +206,6 @@
 				9553126D2EB0B70A001E25FA /* Frameworks */,
 				9553126E2EB0B70A001E25FA /* Resources */,
 				3FED9CCC7A00DD34327031E5 /* [CP] Copy Pods Resources */,
-				955312E12EB0BC10001E25FA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,9 +283,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -315,9 +304,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-notifications/Pods-notifications-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-notifications/Pods-notifications-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -354,9 +347,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
