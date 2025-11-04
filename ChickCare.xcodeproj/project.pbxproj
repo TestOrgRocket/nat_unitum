@@ -644,7 +644,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = JQH8YGN4JV;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JQH8YGN4JV;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8CG4H2SBBL;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -672,7 +672,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.unitapphelp.unitum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Urban Road Noise App";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Urban Road Noise App";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "unitum profile";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -696,7 +696,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = JQH8YGN4JV;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JQH8YGN4JV;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8CG4H2SBBL;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -724,7 +724,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.unitapphelp.unitum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Urban Road Noise App";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Urban Road Noise App";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "unitum profile";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -832,7 +832,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JQH8YGN4JV;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JQH8YGN4JV;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8CG4H2SBBL;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ImageNotificationServiceExt/Info.plist;
@@ -848,7 +848,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.unitapphelp.unitum.notifications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Urban Road Noise Notifications";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Urban Road Noise Notifications";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "not unitum profile";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -871,7 +871,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JQH8YGN4JV;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JQH8YGN4JV;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8CG4H2SBBL;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ImageNotificationServiceExt/Info.plist;
@@ -887,7 +887,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.unitapphelp.unitum.notifications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Urban Road Noise Notifications";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Urban Road Noise Notifications";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "not unitum profile";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
