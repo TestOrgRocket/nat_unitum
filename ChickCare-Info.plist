@@ -6,6 +6,8 @@
 	<array>
 		<string>com.appgroupsofchick.ChickCare.back</string>
 	</array>
+	<key>NSAllowsArbitraryLoadsForMedia</key>
+	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
