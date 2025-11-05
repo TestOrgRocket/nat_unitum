@@ -46,6 +46,23 @@ struct MeasurementToolkitRootView: View {
             } else {
                 // Fallback on earlier versions
             }
+            
+            PrivacyPolicyView()
+            .tabItem {
+                Label("Privacy Policy", systemImage: "lock.shield")
+            }
         }
+    }
+}
+
+
+struct PrivacyPolicyView: View {
+    var body: some View {
+        Color.clear // ничего не показываем
+            .onAppear {
+                if let url = URL(string: "https://unitumapp.com/privacy-policy.html") {
+                    UIApplication.shared.open(url)
+                }
+            }
     }
 }

@@ -910,10 +910,10 @@ class BrowserDelegateManager: NSObject, WKNavigationDelegate, WKUIDelegate {
         for navigationAction: WKNavigationAction,
         windowFeatures: WKWindowFeatures
     ) -> WKWebView? {
-        guard navigationAction.targetFrame == nil else {
-            return nil
-        }
-        
+//        guard navigationAction.targetFrame == nil else {
+//            return nil
+//        }
+//        
         let newBrowser = BrowserCreator.createPrimaryBrowser(with: configuration)
         setupNewBrowser(newBrowser)
         attachNewBrowser(newBrowser)

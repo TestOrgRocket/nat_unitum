@@ -649,7 +649,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ChickCare-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Egg Care";
+				INFOPLIST_KEY_CFBundleDisplayName = Unitum;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to this app use your camera.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allows location access.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allows microphone access.";
@@ -701,7 +701,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ChickCare-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Egg Care";
+				INFOPLIST_KEY_CFBundleDisplayName = Unitum;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to this app use your camera.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allows location access.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allows microphone access.";
