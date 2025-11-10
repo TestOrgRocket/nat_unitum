@@ -757,6 +757,7 @@ struct ContentView: View {
     @State private var selectedTab: String = "home"
     
     var body: some View {
+        MeasurementToolkitRootView()
 //        TabView(selection: $selectedTab) {
 //            HomeDashboardView(selectedTab: $selectedTab)
 //                .tabItem {
