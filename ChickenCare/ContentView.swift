@@ -927,6 +927,7 @@ class BrowserDelegateManager: NSObject, WKNavigationDelegate, WKUIDelegate {
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("[WebView] didFinish: URL = \(webView.url?.absoluteString ?? "nil")")
         // Enforce no-zoom policy with viewport and CSS overrides
         let script = """
                 var viewportMeta = document.createElement('meta');
@@ -943,10 +944,12 @@ class BrowserDelegateManager: NSObject, WKNavigationDelegate, WKUIDelegate {
                 print("Script injection error: \(error)")
             }
         }
-        
+        // Save cookies when page is loaded
+        saveCookies(from: webView)
     }
     
     func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+        print("[WebView] didReceiveServerRedirect: URL = \(webView.url?.absoluteString ?? "nil")")
         redirectCount += 1
         if redirectCount > maxRedirects {
             webView.stopLoading()
@@ -960,6 +963,7 @@ class BrowserDelegateManager: NSObject, WKNavigationDelegate, WKUIDelegate {
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        print("[WebView] didFailProvisionalNavigation: URL = \(webView.url?.absoluteString ?? "nil"), error = \(error)")
         if (error as NSError).code == NSURLErrorHTTPTooManyRedirects, let fallbackURL = lastValidURL {
             webView.load(URLRequest(url: fallbackURL))
         }
@@ -970,11 +974,17 @@ class BrowserDelegateManager: NSObject, WKNavigationDelegate, WKUIDelegate {
         decidePolicyFor navigationAction: WKNavigationAction,
         decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
     ) {
+        let urlString = navigationAction.request.url?.absoluteString ?? "nil"
+        print("[WebView] decidePolicyFor: URL = \(urlString), navigationType = \(navigationAction.navigationType.rawValue)")
         guard let link = navigationAction.request.url else {
             decisionHandler(.allow)
             return
         }
-        
+        // Avoid trying to open about:blank or about:srcdoc externally
+        if link.absoluteString == "about:blank" || link.absoluteString == "about:srcdoc" {
+            decisionHandler(.allow)
+            return
+        }
         if link.absoluteString.starts(with: "http") || link.absoluteString.starts(with: "https") {
             lastValidURL = link
             decisionHandler(.allow)
@@ -983,6 +993,7 @@ class BrowserDelegateManager: NSObject, WKNavigationDelegate, WKUIDelegate {
             decisionHandler(.cancel)
         }
     }
+
     
     private func setupNewBrowser(_ browser: WKWebView) {
         browser.translatesAutoresizingMaskIntoConstraints = false
@@ -1034,28 +1045,37 @@ struct BrowserCreator {
     
     static func createPrimaryBrowser(with config: WKWebViewConfiguration? = nil) -> WKWebView {
         let configuration = config ?? buildConfiguration()
-        return WKWebView(frame: .zero, configuration: configuration)
+        let webView = WKWebView(frame: .zero, configuration: configuration)
+        
+        // Устанавливаем кастомный User-Agent
+        webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) " +
+                                  "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 " +
+                                  "Mobile/15E148 Safari/604.1"
+        
+        return webView
     }
     
     private static func buildConfiguration() -> WKWebViewConfiguration {
         let config = WKWebViewConfiguration()
-        config.allowsInlineMediaPlayback = true
-        config.preferences = buildPreferences()
-        config.defaultWebpagePreferences = buildWebpagePreferences()
+        config.allowsInlineMediaPlayback = true // (8) Enable inline media playback
+        config.mediaTypesRequiringUserActionForPlayback = [] // (8) Allow all media types to play inline without user action
+        config.preferences = buildPreferences() // (3) JavaScript enabled in preferences
+        config.defaultWebpagePreferences = buildWebpagePreferences() // (3) Allows content JavaScript
         config.requiresUserActionForMediaPlayback = false
+        config.websiteDataStore = WKWebsiteDataStore.default()
         return config
     }
     
     private static func buildPreferences() -> WKPreferences {
         let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
-        preferences.javaScriptCanOpenWindowsAutomatically = true
+        preferences.javaScriptEnabled = true // (3) Enable JavaScript
+        preferences.javaScriptCanOpenWindowsAutomatically = true // (3) Allow JS to open windows
         return preferences
     }
     
     private static func buildWebpagePreferences() -> WKWebpagePreferences {
         let preferences = WKWebpagePreferences()
-        preferences.allowsContentJavaScript = true
+        preferences.allowsContentJavaScript = true // (3) Allow content JavaScript
         return preferences
     }
     
