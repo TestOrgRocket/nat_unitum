@@ -1,0 +1,120 @@
+{
+  "source": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Conversion Preset",
+        "location": {
+          "startingColumn": 76,
+          "startingLine": 6
+        }
+      },
+      {
+        "comment": "",
+        "key": "Quick Conversion",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "Performs a saved conversion using the selected preset.",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 64
+        }
+      },
+      {
+        "comment": "",
+        "key": "Preset",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "Value",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lf %@ = %@ %@",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 88
+        }
+      },
+      {
+        "comment": "",
+        "key": "Result is undefined.",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "Counter",
+        "location": {
+          "startingColumn": 76,
+          "startingLine": 94
+        }
+      },
+      {
+        "comment": "",
+        "key": "Increment Counter",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 127
+        }
+      },
+      {
+        "comment": "",
+        "key": "Increases the counter by the configured step.",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 128
+        }
+      },
+      {
+        "comment": "",
+        "key": "Counter",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 130
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@: %@",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 143
+        }
+      },
+      {
+        "comment": "",
+        "key": "Preset not found",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 156
+        }
+      },
+      {
+        "comment": "",
+        "key": "Counter not found",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 158
+        }
+      }
+    ]
+  },
+  "version": 1
+}

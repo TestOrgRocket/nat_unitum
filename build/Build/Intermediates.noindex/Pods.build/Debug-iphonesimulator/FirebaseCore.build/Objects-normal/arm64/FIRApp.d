@@ -1,0 +1,24 @@
+dependencies: \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/Darwin.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseCore.build/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Sources/FIRApp.m \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/UIKit.framework/Modules/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/ObjectiveC.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRApp.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Sources/FIRAnalyticsConfiguration.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Sources/FIRBundleUtil.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Sources/FIRComponentContainerInternal.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Extension/FIRComponentContainer.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Extension/FIRLibrary.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Sources/FIRConfigurationInternal.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRConfiguration.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRLoggerLevel.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Sources/FIRFirebaseUserAgent.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Extension/FIRAppInternal.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Extension/FIRHeartbeatLogger.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Extension/FIRLogger.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Sources/FIROptionsInternal.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIROptions.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRVersion.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/GoogleUtilities.build/module.modulemap

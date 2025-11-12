@@ -15,16 +15,31 @@ struct ConverterRootView: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 24) {
-                categorySelector
-                converterCard
-                historySection
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            
+            ScrollView {
+                VStack(spacing: 24) {
+                    categorySelector
+                        .padding(.horizontal, -16)
+                    
+                    converterCard
+                    historySection
+                }
+                .padding(.horizontal)
+                .padding(.top)
             }
-            .padding(.horizontal)
-            .padding(.top)
         }
-    .navigationTitle("Converter")
+    .gradientNavigationTitle("Converter")
         .toolbar { ToolbarItemGroup(placement: .keyboard) { keyboardToolbar } }
         .onAppear { configureDefaults() }
         .onChange(of: state.settings) { _ in updateResult() }
@@ -41,16 +56,36 @@ struct ConverterRootView: View {
                     Button {
                         selectedCategory = category
                     } label: {
-                        Text(category.title)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                            .background(selectedCategory == category ? Color.accentColor.opacity(0.2) : Color.secondary.opacity(0.15))
-                            .foregroundColor(selectedCategory == category ? .accentColor : .primary)
-                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                            .accessibilityLabel("Category " + category.title)
+                        HStack(spacing: 6) {
+                            Text(category.emoji)
+                                .font(.system(size: 20))
+                            Text(category.title)
+                                .font(.system(size: 15, weight: .medium))
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 10)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                .fill(
+                                    selectedCategory == category
+                                    ? Color(red: category.color.red, green: category.color.green, blue: category.color.blue)
+                                    : Color.white.opacity(0.7)
+                                )
+                                .shadow(
+                                    color: selectedCategory == category 
+                                        ? Color(red: category.color.red, green: category.color.green, blue: category.color.blue).opacity(0.4)
+                                        : Color.clear,
+                                    radius: 8,
+                                    x: 0,
+                                    y: 3
+                                )
+                        )
+                        .foregroundColor(selectedCategory == category ? .white : .primary)
+                        .accessibilityLabel("Category " + category.title)
                     }
                 }
             }
+            .padding(.horizontal, 16)
             .padding(.vertical, 4)
         }
     }
@@ -65,16 +100,19 @@ struct ConverterRootView: View {
                     Label("Swap", systemImage: "arrow.triangle.swap")
                 }
                 .buttonStyle(.borderedProminent)
+                .tint(Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0))
 
                 Button(action: multiplyInput) {
                     Text("×10")
                 }
                 .buttonStyle(.bordered)
+                .tint(Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0))
 
                 Button(action: divideInput) {
                     Text("÷10")
                 }
                 .buttonStyle(.bordered)
+                .tint(Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0))
 
                 Spacer()
 
@@ -87,7 +125,11 @@ struct ConverterRootView: View {
             }
         }
         .padding()
-        .background(RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Color(uiColor: .secondarySystemBackground)))
+        .background(
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(Color.white.opacity(0.85))
+                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+        )
         .accessibilityElement(children: .contain)
     }
 
@@ -135,14 +177,33 @@ struct ConverterRootView: View {
                     }
                     .padding(.horizontal, 12)
                     .padding(.vertical, 8)
-                    .background(Color(uiColor: .tertiarySystemFill))
+                    .background(
+                        Color(
+                            red: selectedCategory.color.red,
+                            green: selectedCategory.color.green,
+                            blue: selectedCategory.color.blue
+                        )
+                        .opacity(0.35)
+                    )
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                 }
                 .accessibilityLabel("Select unit for \(title) field")
             }
         }
         .padding(16)
-        .background(RoundedRectangle(cornerRadius: 16, style: .continuous).fill(Color(uiColor: .secondarySystemGroupedBackground)))
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(colors: [
+                            Color.white.opacity(0.95),
+                            Color(red: 0.9, green: 0.97, blue: 1.0).opacity(0.95)
+                        ]),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+        )
     }
 
     private var historySection: some View {
@@ -310,40 +371,110 @@ private struct HistoryRow: View {
     @EnvironmentObject private var state: MeasurementToolkitState
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            HStack {
-                Text(symbol(from: entry.fromUnit))
-                Image(systemName: "arrow.right")
-                Text(symbol(from: entry.toUnit))
-                Spacer()
-                Text(timestamp)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+        HStack(spacing: 0) {
+            // Цветная полоска категории
+            RoundedRectangle(cornerRadius: 4)
+                .fill(
+                    Color(
+                        red: entry.category.color.red,
+                        green: entry.category.color.green,
+                        blue: entry.category.color.blue
+                    )
+                )
+                .frame(width: 4)
+                .padding(.trailing, 12)
+            
+            VStack(alignment: .leading, spacing: 8) {
+                // Верхняя строка: эмоджи, единицы и время
+                HStack(alignment: .center, spacing: 8) {
+                    // Эмоджи категории
+                    Text(entry.category.emoji)
+                        .font(.title3)
+                    
+                    // Единицы измерения
+                    HStack(spacing: 6) {
+                        Text(symbol(from: entry.fromUnit))
+                            .font(.headline)
+                        Image(systemName: "arrow.right.circle.fill")
+                            .font(.caption)
+                            .foregroundColor(
+                                Color(
+                                    red: entry.category.color.red,
+                                    green: entry.category.color.green,
+                                    blue: entry.category.color.blue
+                                )
+                            )
+                        Text(symbol(from: entry.toUnit))
+                            .font(.headline)
+                    }
+                    
+                    Spacer()
+                    
+                    // Время
+                    Text(relativeTime)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                
+                // Нижняя строка: значения конверсии
+                HStack(spacing: 6) {
+                    Text(formatValue(entry.inputValue))
+                        .font(.subheadline)
+                        .foregroundColor(.primary)
+                    
+                    Image(systemName: "equal.circle")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                    
+                    Text(formatValue(entry.outputValue))
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(
+                            Color(
+                                red: entry.category.color.red,
+                                green: entry.category.color.green,
+                                blue: entry.category.color.blue
+                            )
+                        )
+                }
             }
-            .font(.subheadline)
-
-            Text(valueLine)
-                .font(.caption)
-                .foregroundColor(.secondary)
         }
         .padding(12)
-        .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(Color(uiColor: .tertiarySystemBackground)))
+        .background(
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .fill(Color.white.opacity(0.9))
+        )
     }
 
-    private var timestamp: String {
-        let formatter = RelativeDateTimeFormatter()
-        formatter.unitsStyle = .abbreviated
-        return formatter.localizedString(for: entry.timestamp, relativeTo: Date())
+    private var relativeTime: String {
+        let interval = Date().timeIntervalSince(entry.timestamp)
+        
+        if interval < 60 {
+            return "just now"
+        } else if interval < 3600 {
+            let minutes = Int(interval / 60)
+            return "\(minutes)m ago"
+        } else if interval < 86400 {
+            let hours = Int(interval / 3600)
+            return "\(hours)h ago"
+        } else {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            formatter.timeStyle = .none
+            return formatter.string(from: entry.timestamp)
+        }
+    }
+    
+    private func formatValue(_ value: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = entry.precision
+        formatter.minimumFractionDigits = 0
+        formatter.locale = Locale.current
+        return formatter.string(from: NSNumber(value: value)) ?? String(value)
     }
 
     private func symbol(from identity: UnitIdentity) -> String {
         state.unit(for: identity)?.symbol ?? "?"
-    }
-
-    private var valueLine: String {
-        let formatter = MeasurementFormatterFactory.formatter(settings: state.settings)
-        let input = formatter.string(from: NSNumber(value: entry.inputValue)) ?? String(entry.inputValue)
-        let output = formatter.string(from: NSNumber(value: entry.outputValue)) ?? String(entry.outputValue)
-        return "\(input) → \(output)"
     }
 }

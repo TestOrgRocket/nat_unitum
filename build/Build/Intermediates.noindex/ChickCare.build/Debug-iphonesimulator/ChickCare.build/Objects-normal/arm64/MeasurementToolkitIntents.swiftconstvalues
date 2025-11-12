@@ -1,0 +1,1156 @@
+[
+  {
+    "typeName": "ChickCare.ConversionPresetEntity",
+    "mangledTypeName": "9ChickCare22ConversionPresetEntityV",
+    "kind": "struct",
+    "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+    "line": 5,
+    "conformances": [
+      "AppIntents.AppEntity",
+      "AppIntents.AppValue",
+      "AppIntents.DisplayRepresentable",
+      "Swift.Identifiable",
+      "AppIntents.PersistentlyIdentifiable",
+      "AppIntents.TypeDisplayRepresentable",
+      "AppIntents._IntentValue",
+      "Swift.Sendable",
+      "AppIntents.InstanceDisplayRepresentable",
+      "Foundation.CustomLocalizedStringResourceConvertible"
+    ],
+    "allConformances": [
+      {
+        "protocolName": "AppIntents.AppEntity",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.AppValue",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.DisplayRepresentable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "Swift.Identifiable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.PersistentlyIdentifiable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.TypeDisplayRepresentable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents._IntentValue",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "Swift.Sendable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.InstanceDisplayRepresentable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "Foundation.CustomLocalizedStringResourceConvertible",
+        "conformanceDefiningModule": "ChickCare"
+      }
+    ],
+    "associatedTypeAliases": [
+      {
+        "typeAliasName": "DefaultQuery",
+        "substitutedTypeName": "ChickCare.FavoritePresetsQuery",
+        "substitutedMangledTypeName": "9ChickCare20FavoritePresetsQueryV"
+      },
+      {
+        "typeAliasName": "ID",
+        "substitutedTypeName": "Foundation.UUID",
+        "substitutedMangledTypeName": "10Foundation4UUIDV"
+      },
+      {
+        "typeAliasName": "ValueType",
+        "substitutedTypeName": "ChickCare.ConversionPresetEntity",
+        "substitutedMangledTypeName": "9ChickCare22ConversionPresetEntityV"
+      },
+      {
+        "typeAliasName": "UnwrappedType",
+        "substitutedTypeName": "ChickCare.ConversionPresetEntity",
+        "substitutedMangledTypeName": "9ChickCare22ConversionPresetEntityV"
+      },
+      {
+        "typeAliasName": "Specification",
+        "substitutedTypeName": "AppIntents.EmptyResolverSpecification<ChickCare.ConversionPresetEntity>",
+        "substitutedMangledTypeName": "10AppIntents26EmptyResolverSpecificationVy9ChickCare22ConversionPresetEntityVG"
+      }
+    ],
+    "properties": [
+      {
+        "label": "id",
+        "type": "Foundation.UUID",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 9,
+        "valueKind": "Runtime"
+      },
+      {
+        "label": "title",
+        "type": "Swift.String",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 10,
+        "valueKind": "Runtime"
+      },
+      {
+        "label": "fromSymbol",
+        "type": "Swift.String",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 11,
+        "valueKind": "Runtime"
+      },
+      {
+        "label": "toSymbol",
+        "type": "Swift.String",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 12,
+        "valueKind": "Runtime"
+      },
+      {
+        "label": "typeDisplayRepresentation",
+        "type": "AppIntents.TypeDisplayRepresentation",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 6,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.TypeDisplayRepresentation",
+          "arguments": [
+            {
+              "label": "name",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "RawLiteral",
+              "value": "Conversion Preset"
+            },
+            {
+              "label": "numericFormat",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            }
+          ]
+        }
+      },
+      {
+        "label": "defaultQuery",
+        "type": "ChickCare.FavoritePresetsQuery",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 7,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "ChickCare.FavoritePresetsQuery",
+          "arguments": []
+        }
+      },
+      {
+        "label": "displayRepresentation",
+        "type": "AppIntents.DisplayRepresentation",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 32,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.DisplayRepresentation",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "InitCall",
+              "value": {
+                "type": "Foundation.LocalizedStringResource",
+                "arguments": [
+                  {
+                    "label": "stringLiteral",
+                    "type": "Swift.String",
+                    "valueKind": "Runtime"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "subtitle",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "InitCall",
+              "value": {
+                "type": "Foundation.LocalizedStringResource",
+                "arguments": [
+                  {
+                    "label": "stringLiteral",
+                    "type": "Swift.String",
+                    "valueKind": "InterpolatedStringLiteral",
+                    "value": {
+                      "segments": [
+                        {
+                          "valueKind": "RawLiteral",
+                          "value": ""
+                        },
+                        {
+                          "valueKind": "Runtime"
+                        },
+                        {
+                          "valueKind": "RawLiteral",
+                          "value": " → "
+                        },
+                        {
+                          "valueKind": "Runtime"
+                        },
+                        {
+                          "valueKind": "RawLiteral",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "label": "image",
+              "type": "Swift.Optional<AppIntents.DisplayRepresentation.Image>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            }
+          ]
+        }
+      }
+    ],
+    "availabilityAttributes": [
+      {
+        "platform": "iOS",
+        "introducedVersion": "16.0",
+        "isUnavailable": false,
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "typeName": "ChickCare.FavoritePresetsQuery",
+    "mangledTypeName": "9ChickCare20FavoritePresetsQueryV",
+    "kind": "struct",
+    "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+    "line": 41,
+    "conformances": [
+      "AppIntents.EntityQuery",
+      "AppIntents.DynamicOptionsProvider",
+      "AppIntents.PersistentlyIdentifiable",
+      "Swift.Sendable",
+      "AppIntents._SupportsAppDependencies",
+      "Swift.BitwiseCopyable"
+    ],
+    "allConformances": [
+      {
+        "protocolName": "AppIntents.EntityQuery",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.DynamicOptionsProvider",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.PersistentlyIdentifiable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "Swift.Sendable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents._SupportsAppDependencies",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "Swift.BitwiseCopyable",
+        "conformanceDefiningModule": "ChickCare"
+      }
+    ],
+    "associatedTypeAliases": [
+      {
+        "typeAliasName": "Entity",
+        "substitutedTypeName": "ChickCare.ConversionPresetEntity",
+        "substitutedMangledTypeName": "9ChickCare22ConversionPresetEntityV"
+      },
+      {
+        "typeAliasName": "Result",
+        "substitutedTypeName": "Swift.Array<ChickCare.ConversionPresetEntity>",
+        "substitutedMangledTypeName": "Say9ChickCare22ConversionPresetEntityVG"
+      },
+      {
+        "typeAliasName": "Result",
+        "substitutedTypeName": "Swift.Array<ChickCare.ConversionPresetEntity>",
+        "substitutedMangledTypeName": "Say9ChickCare22ConversionPresetEntityVG"
+      },
+      {
+        "typeAliasName": "DefaultValue",
+        "substitutedTypeName": "ChickCare.ConversionPresetEntity",
+        "substitutedMangledTypeName": "9ChickCare22ConversionPresetEntityV"
+      }
+    ],
+    "properties": [],
+    "availabilityAttributes": [
+      {
+        "platform": "iOS",
+        "introducedVersion": "16.0",
+        "isUnavailable": false,
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "typeName": "ChickCare.QuickConversionIntent",
+    "mangledTypeName": "9ChickCare21QuickConversionIntentV",
+    "kind": "struct",
+    "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+    "line": 62,
+    "conformances": [
+      "AppIntents.AppIntent",
+      "AppIntents.PersistentlyIdentifiable",
+      "AppIntents._SupportsAppDependencies",
+      "Swift.Sendable"
+    ],
+    "allConformances": [
+      {
+        "protocolName": "AppIntents.AppIntent",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.PersistentlyIdentifiable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents._SupportsAppDependencies",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "Swift.Sendable",
+        "conformanceDefiningModule": "ChickCare"
+      }
+    ],
+    "associatedTypeAliases": [
+      {
+        "typeAliasName": "PerformResult",
+        "substitutedTypeName": "some AppIntents.ProvidesDialog",
+        "substitutedMangledTypeName": "9ChickCare21QuickConversionIntentV7performQryYaKFQOy_Qo_",
+        "opaqueTypeProtocolRequirements": [
+          "AppIntents.ProvidesDialog"
+        ],
+        "opaqueTypeSameTypeRequirements": []
+      },
+      {
+        "typeAliasName": "SummaryContent",
+        "substitutedTypeName": "some AppIntents.ParameterSummary",
+        "substitutedMangledTypeName": "10AppIntents0A6IntentPAAE16parameterSummaryQrvpZQOy9ChickCare015QuickConversionC0V_Qo_",
+        "opaqueTypeProtocolRequirements": [
+          "AppIntents.ParameterSummary"
+        ],
+        "opaqueTypeSameTypeRequirements": []
+      }
+    ],
+    "properties": [
+      {
+        "label": "_preset",
+        "type": "AppIntents.IntentParameter<ChickCare.ConversionPresetEntity>",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 67,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.IntentParameter<ChickCare.ConversionPresetEntity>",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "RawLiteral",
+              "value": "Preset"
+            },
+            {
+              "label": "description",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "default",
+              "type": "Swift.Optional<ChickCare.ConversionPresetEntity>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "requestValueDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "requestDisambiguationDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "inputConnectionBehavior",
+              "type": "AppIntents.InputConnectionBehavior",
+              "valueKind": "Runtime"
+            }
+          ]
+        }
+      },
+      {
+        "label": "_value",
+        "type": "AppIntents.IntentParameter<Swift.Double>",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 70,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.IntentParameter<Swift.Double>",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "RawLiteral",
+              "value": "Value"
+            },
+            {
+              "label": "description",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "default",
+              "type": "Swift.Optional<Swift.Double>",
+              "valueKind": "RawLiteral",
+              "value": "1"
+            },
+            {
+              "label": "controlStyle",
+              "type": "AppIntents.IntentParameter<Swift.Double>.DoubleControlStyle",
+              "valueKind": "Runtime"
+            },
+            {
+              "label": "inclusiveRange",
+              "type": "Swift.Optional<(lowerBound: Swift.Double, upperBound: Swift.Double)>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "requestValueDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "inputConnectionBehavior",
+              "type": "AppIntents.InputConnectionBehavior",
+              "valueKind": "Runtime"
+            }
+          ]
+        }
+      },
+      {
+        "label": "title",
+        "type": "Foundation.LocalizedStringResource",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 63,
+        "valueKind": "RawLiteral",
+        "value": "Quick Conversion"
+      },
+      {
+        "label": "description",
+        "type": "AppIntents.IntentDescription",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 64,
+        "valueKind": "RawLiteral",
+        "value": "Performs a saved conversion using the selected preset."
+      },
+      {
+        "label": "preset",
+        "type": "ChickCare.ConversionPresetEntity",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 67,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.IntentParameter<ChickCare.ConversionPresetEntity>",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "RawLiteral",
+              "value": "Preset"
+            },
+            {
+              "label": "description",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "default",
+              "type": "Swift.Optional<ChickCare.ConversionPresetEntity>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "requestValueDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "requestDisambiguationDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "inputConnectionBehavior",
+              "type": "AppIntents.InputConnectionBehavior",
+              "valueKind": "Runtime"
+            }
+          ]
+        },
+        "propertyWrappers": [
+          {
+            "type": "AppIntents.IntentParameter",
+            "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+            "line": 66,
+            "arguments": [
+              {
+                "label": "title",
+                "type": "Foundation.LocalizedStringResource",
+                "valueKind": "RawLiteral",
+                "value": "Preset"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "$preset",
+        "type": "AppIntents.IntentParameter<ChickCare.ConversionPresetEntity>",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 67,
+        "valueKind": "Runtime"
+      },
+      {
+        "label": "value",
+        "type": "Swift.Double",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 70,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.IntentParameter<Swift.Double>",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "RawLiteral",
+              "value": "Value"
+            },
+            {
+              "label": "description",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "default",
+              "type": "Swift.Optional<Swift.Double>",
+              "valueKind": "RawLiteral",
+              "value": "1"
+            },
+            {
+              "label": "controlStyle",
+              "type": "AppIntents.IntentParameter<Swift.Double>.DoubleControlStyle",
+              "valueKind": "Runtime"
+            },
+            {
+              "label": "inclusiveRange",
+              "type": "Swift.Optional<(lowerBound: Swift.Double, upperBound: Swift.Double)>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "requestValueDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "inputConnectionBehavior",
+              "type": "AppIntents.InputConnectionBehavior",
+              "valueKind": "Runtime"
+            }
+          ]
+        },
+        "propertyWrappers": [
+          {
+            "type": "AppIntents.IntentParameter",
+            "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+            "line": 69,
+            "arguments": [
+              {
+                "label": "title",
+                "type": "Foundation.LocalizedStringResource",
+                "valueKind": "RawLiteral",
+                "value": "Value"
+              },
+              {
+                "label": "default",
+                "type": "Swift.Optional<Swift.Double>",
+                "valueKind": "RawLiteral",
+                "value": "1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "$value",
+        "type": "AppIntents.IntentParameter<Swift.Double>",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 70,
+        "valueKind": "Runtime"
+      }
+    ],
+    "availabilityAttributes": [
+      {
+        "platform": "iOS",
+        "introducedVersion": "16.0",
+        "isUnavailable": false,
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "typeName": "ChickCare.CounterEntity",
+    "mangledTypeName": "9ChickCare13CounterEntityV",
+    "kind": "struct",
+    "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+    "line": 93,
+    "conformances": [
+      "AppIntents.AppEntity",
+      "AppIntents.AppValue",
+      "AppIntents.DisplayRepresentable",
+      "Swift.Identifiable",
+      "AppIntents.PersistentlyIdentifiable",
+      "AppIntents.TypeDisplayRepresentable",
+      "AppIntents._IntentValue",
+      "Swift.Sendable",
+      "AppIntents.InstanceDisplayRepresentable",
+      "Foundation.CustomLocalizedStringResourceConvertible"
+    ],
+    "allConformances": [
+      {
+        "protocolName": "AppIntents.AppEntity",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.AppValue",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.DisplayRepresentable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "Swift.Identifiable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.PersistentlyIdentifiable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.TypeDisplayRepresentable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents._IntentValue",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "Swift.Sendable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.InstanceDisplayRepresentable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "Foundation.CustomLocalizedStringResourceConvertible",
+        "conformanceDefiningModule": "ChickCare"
+      }
+    ],
+    "associatedTypeAliases": [
+      {
+        "typeAliasName": "DefaultQuery",
+        "substitutedTypeName": "ChickCare.CounterQuery",
+        "substitutedMangledTypeName": "9ChickCare12CounterQueryV"
+      },
+      {
+        "typeAliasName": "ID",
+        "substitutedTypeName": "Foundation.UUID",
+        "substitutedMangledTypeName": "10Foundation4UUIDV"
+      },
+      {
+        "typeAliasName": "ValueType",
+        "substitutedTypeName": "ChickCare.CounterEntity",
+        "substitutedMangledTypeName": "9ChickCare13CounterEntityV"
+      },
+      {
+        "typeAliasName": "UnwrappedType",
+        "substitutedTypeName": "ChickCare.CounterEntity",
+        "substitutedMangledTypeName": "9ChickCare13CounterEntityV"
+      },
+      {
+        "typeAliasName": "Specification",
+        "substitutedTypeName": "AppIntents.EmptyResolverSpecification<ChickCare.CounterEntity>",
+        "substitutedMangledTypeName": "10AppIntents26EmptyResolverSpecificationVy9ChickCare13CounterEntityVG"
+      }
+    ],
+    "properties": [
+      {
+        "label": "id",
+        "type": "Foundation.UUID",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 97,
+        "valueKind": "Runtime"
+      },
+      {
+        "label": "name",
+        "type": "Swift.String",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 98,
+        "valueKind": "Runtime"
+      },
+      {
+        "label": "typeDisplayRepresentation",
+        "type": "AppIntents.TypeDisplayRepresentation",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 94,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.TypeDisplayRepresentation",
+          "arguments": [
+            {
+              "label": "name",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "RawLiteral",
+              "value": "Counter"
+            },
+            {
+              "label": "numericFormat",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            }
+          ]
+        }
+      },
+      {
+        "label": "defaultQuery",
+        "type": "ChickCare.CounterQuery",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 95,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "ChickCare.CounterQuery",
+          "arguments": []
+        }
+      },
+      {
+        "label": "displayRepresentation",
+        "type": "AppIntents.DisplayRepresentation",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 105,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.DisplayRepresentation",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "InitCall",
+              "value": {
+                "type": "Foundation.LocalizedStringResource",
+                "arguments": [
+                  {
+                    "label": "stringLiteral",
+                    "type": "Swift.String",
+                    "valueKind": "Runtime"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "subtitle",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "image",
+              "type": "Swift.Optional<AppIntents.DisplayRepresentation.Image>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            }
+          ]
+        }
+      }
+    ],
+    "availabilityAttributes": [
+      {
+        "platform": "iOS",
+        "introducedVersion": "16.0",
+        "isUnavailable": false,
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "typeName": "ChickCare.CounterQuery",
+    "mangledTypeName": "9ChickCare12CounterQueryV",
+    "kind": "struct",
+    "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+    "line": 111,
+    "conformances": [
+      "AppIntents.EntityQuery",
+      "AppIntents.DynamicOptionsProvider",
+      "AppIntents.PersistentlyIdentifiable",
+      "Swift.Sendable",
+      "AppIntents._SupportsAppDependencies",
+      "Swift.BitwiseCopyable"
+    ],
+    "allConformances": [
+      {
+        "protocolName": "AppIntents.EntityQuery",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.DynamicOptionsProvider",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.PersistentlyIdentifiable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "Swift.Sendable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents._SupportsAppDependencies",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "Swift.BitwiseCopyable",
+        "conformanceDefiningModule": "ChickCare"
+      }
+    ],
+    "associatedTypeAliases": [
+      {
+        "typeAliasName": "Entity",
+        "substitutedTypeName": "ChickCare.CounterEntity",
+        "substitutedMangledTypeName": "9ChickCare13CounterEntityV"
+      },
+      {
+        "typeAliasName": "Result",
+        "substitutedTypeName": "Swift.Array<ChickCare.CounterEntity>",
+        "substitutedMangledTypeName": "Say9ChickCare13CounterEntityVG"
+      },
+      {
+        "typeAliasName": "Result",
+        "substitutedTypeName": "Swift.Array<ChickCare.CounterEntity>",
+        "substitutedMangledTypeName": "Say9ChickCare13CounterEntityVG"
+      },
+      {
+        "typeAliasName": "DefaultValue",
+        "substitutedTypeName": "ChickCare.CounterEntity",
+        "substitutedMangledTypeName": "9ChickCare13CounterEntityV"
+      }
+    ],
+    "properties": [],
+    "availabilityAttributes": [
+      {
+        "platform": "iOS",
+        "introducedVersion": "16.0",
+        "isUnavailable": false,
+        "isDeprecated": false
+      }
+    ]
+  },
+  {
+    "typeName": "ChickCare.IncrementCounterIntent",
+    "mangledTypeName": "9ChickCare22IncrementCounterIntentV",
+    "kind": "struct",
+    "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+    "line": 126,
+    "conformances": [
+      "AppIntents.AppIntent",
+      "AppIntents.PersistentlyIdentifiable",
+      "AppIntents._SupportsAppDependencies",
+      "Swift.Sendable"
+    ],
+    "allConformances": [
+      {
+        "protocolName": "AppIntents.AppIntent",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents.PersistentlyIdentifiable",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "AppIntents._SupportsAppDependencies",
+        "conformanceDefiningModule": "ChickCare"
+      },
+      {
+        "protocolName": "Swift.Sendable",
+        "conformanceDefiningModule": "ChickCare"
+      }
+    ],
+    "associatedTypeAliases": [
+      {
+        "typeAliasName": "PerformResult",
+        "substitutedTypeName": "some AppIntents.ProvidesDialog",
+        "substitutedMangledTypeName": "9ChickCare22IncrementCounterIntentV7performQryYaKFQOy_Qo_",
+        "opaqueTypeProtocolRequirements": [
+          "AppIntents.ProvidesDialog"
+        ],
+        "opaqueTypeSameTypeRequirements": []
+      },
+      {
+        "typeAliasName": "SummaryContent",
+        "substitutedTypeName": "some AppIntents.ParameterSummary",
+        "substitutedMangledTypeName": "10AppIntents0A6IntentPAAE16parameterSummaryQrvpZQOy9ChickCare016IncrementCounterC0V_Qo_",
+        "opaqueTypeProtocolRequirements": [
+          "AppIntents.ParameterSummary"
+        ],
+        "opaqueTypeSameTypeRequirements": []
+      }
+    ],
+    "properties": [
+      {
+        "label": "_counter",
+        "type": "AppIntents.IntentParameter<ChickCare.CounterEntity>",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 131,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.IntentParameter<ChickCare.CounterEntity>",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "RawLiteral",
+              "value": "Counter"
+            },
+            {
+              "label": "description",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "default",
+              "type": "Swift.Optional<ChickCare.CounterEntity>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "requestValueDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "requestDisambiguationDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "inputConnectionBehavior",
+              "type": "AppIntents.InputConnectionBehavior",
+              "valueKind": "Runtime"
+            }
+          ]
+        }
+      },
+      {
+        "label": "title",
+        "type": "Foundation.LocalizedStringResource",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 127,
+        "valueKind": "RawLiteral",
+        "value": "Increment Counter"
+      },
+      {
+        "label": "description",
+        "type": "AppIntents.IntentDescription",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 128,
+        "valueKind": "RawLiteral",
+        "value": "Increases the counter by the configured step."
+      },
+      {
+        "label": "counter",
+        "type": "ChickCare.CounterEntity",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 131,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.IntentParameter<ChickCare.CounterEntity>",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "RawLiteral",
+              "value": "Counter"
+            },
+            {
+              "label": "description",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "default",
+              "type": "Swift.Optional<ChickCare.CounterEntity>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "requestValueDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "requestDisambiguationDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "RawLiteral",
+              "value": "nil"
+            },
+            {
+              "label": "inputConnectionBehavior",
+              "type": "AppIntents.InputConnectionBehavior",
+              "valueKind": "Runtime"
+            }
+          ]
+        },
+        "propertyWrappers": [
+          {
+            "type": "AppIntents.IntentParameter",
+            "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+            "line": 130,
+            "arguments": [
+              {
+                "label": "title",
+                "type": "Foundation.LocalizedStringResource",
+                "valueKind": "RawLiteral",
+                "value": "Counter"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "$counter",
+        "type": "AppIntents.IntentParameter<ChickCare.CounterEntity>",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift",
+        "line": 131,
+        "valueKind": "Runtime"
+      }
+    ],
+    "availabilityAttributes": [
+      {
+        "platform": "iOS",
+        "introducedVersion": "16.0",
+        "isUnavailable": false,
+        "isDeprecated": false
+      }
+    ]
+  }
+]

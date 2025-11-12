@@ -1,0 +1,18 @@
+{
+  "" : {
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ImageNotificationServiceExt.build/Objects-normal/arm64/ImageNotificationServiceExt-master.dia",
+    "emit-module-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ImageNotificationServiceExt.build/Objects-normal/arm64/ImageNotificationServiceExt-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ImageNotificationServiceExt.build/Objects-normal/arm64/ImageNotificationServiceExt-master-emit-module.dia",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ImageNotificationServiceExt.build/Objects-normal/arm64/ImageNotificationServiceExt-master.swiftdeps"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ImageNotificationServiceExt/NotificationService.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ImageNotificationServiceExt.build/Objects-normal/arm64/NotificationService.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ImageNotificationServiceExt.build/Objects-normal/arm64/NotificationService.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ImageNotificationServiceExt.build/Objects-normal/arm64/NotificationService.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ImageNotificationServiceExt.build/Objects-normal/arm64/NotificationService.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ImageNotificationServiceExt.build/Objects-normal/arm64/NotificationService.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ImageNotificationServiceExt.build/Objects-normal/arm64/NotificationService.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ImageNotificationServiceExt.build/Objects-normal/arm64/NotificationService.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ImageNotificationServiceExt.build/Objects-normal/arm64/NotificationService~partial.swiftmodule"
+  }
+}

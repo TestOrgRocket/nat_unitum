@@ -1,0 +1,104 @@
+{
+  "source": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/ConverterRootView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Swap",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 100
+        }
+      },
+      {
+        "comment": "",
+        "key": "×10",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 106
+        }
+      },
+      {
+        "comment": "",
+        "key": "÷10",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 112
+        }
+      },
+      {
+        "comment": "",
+        "key": "Favorite",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "Remove from favorites",
+        "location": {
+          "startingColumn": 58,
+          "startingLine": 123
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add to favorites",
+        "location": {
+          "startingColumn": 84,
+          "startingLine": 123
+        }
+      },
+      {
+        "comment": "",
+        "key": "0",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 144
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select unit for %@ field",
+        "location": {
+          "startingColumn": 37,
+          "startingLine": 190
+        }
+      },
+      {
+        "comment": "",
+        "key": "History is empty for now.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 221
+        }
+      },
+      {
+        "comment": "",
+        "key": "History",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 212
+        }
+      },
+      {
+        "comment": "",
+        "key": "Show All",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 216
+        }
+      },
+      {
+        "comment": "",
+        "key": "Done",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 361
+        }
+      }
+    ]
+  },
+  "version": 1
+}

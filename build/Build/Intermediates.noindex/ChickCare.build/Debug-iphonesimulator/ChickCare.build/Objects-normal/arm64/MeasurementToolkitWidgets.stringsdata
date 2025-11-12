@@ -1,0 +1,56 @@
+{
+  "source": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitWidgets.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Quick Converter",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "Shows the result of the selected conversion and its latest input value.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 67
+        }
+      },
+      {
+        "comment": "",
+        "key": "1 %@ = %@ %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 80
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add a preset in the app",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 83
+        }
+      },
+      {
+        "comment": "",
+        "key": "Quick Counter",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 135
+        }
+      },
+      {
+        "comment": "",
+        "key": "Displays the value of the selected counter.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 136
+        }
+      }
+    ]
+  },
+  "version": 1
+}

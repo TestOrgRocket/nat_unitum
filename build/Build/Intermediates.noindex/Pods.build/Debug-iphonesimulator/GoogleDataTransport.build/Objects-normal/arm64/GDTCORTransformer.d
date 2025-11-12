@@ -1,0 +1,27 @@
+dependencies: \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/GoogleDataTransport.build/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/GDTCORTransformer.m \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORTransformer.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORLifecycle.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORPlatform.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/SystemConfiguration.framework/Modules/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/UIKit.framework/Modules/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/CoreTelephony.framework/Modules/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORTransformer_Private.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORAssert.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCORConsoleLogger.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORStorageProtocol.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORStorageEventSelector.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCORTargets.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORStorageSizeBytes.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCOREvent.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCOREventDataObject.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCOREventTransformer.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCOREvent_Private.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Public/GoogleDataTransport/GDTCORClock.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Private/GDTCORRegistrar_Private.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORRegistrar.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORMetricsControllerProtocol.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCOREventDropReason.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/GoogleDataTransport/GoogleDataTransport/GDTCORLibrary/Internal/GDTCORUploader.h
