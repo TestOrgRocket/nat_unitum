@@ -36,6 +36,42 @@ public enum MeasurementCategory: String, CaseIterable, Codable, Identifiable {
         case .fuelConsumption: return "Fuel Consumption"
         }
     }
+    
+    /// Emoji icon for visual recognition
+    var emoji: String {
+        switch self {
+        case .length: return "📏"
+        case .mass: return "⚖️"
+        case .volume: return "🧪"
+        case .area: return "◼️"
+        case .speed: return "🚀"
+        case .temperature: return "🌡️"
+        case .pressure: return "💨"
+        case .energy: return "⚡"
+        case .force: return "💪"
+        case .time: return "⏰"
+        case .angle: return "📐"
+        case .fuelConsumption: return "⛽"
+        }
+    }
+    
+    /// Color for category button (light versions for buttons on gradient background)
+    var color: (red: Double, green: Double, blue: Double) {
+        switch self {
+        case .length: return (red: 0.2, green: 0.7, blue: 0.9)        // Голубой
+        case .mass: return (red: 0.95, green: 0.6, blue: 0.3)         // Оранжевый
+        case .volume: return (red: 0.4, green: 0.8, blue: 0.6)        // Бирюзовый
+        case .area: return (red: 0.9, green: 0.5, blue: 0.7)          // Розовый
+        case .speed: return (red: 0.5, green: 0.4, blue: 0.9)         // Фиолетовый
+        case .temperature: return (red: 0.95, green: 0.3, blue: 0.3)  // Красный
+        case .pressure: return (red: 0.3, green: 0.85, blue: 0.85)    // Cyan
+        case .energy: return (red: 1.0, green: 0.8, blue: 0.2)        // Желтый
+        case .force: return (red: 0.7, green: 0.3, blue: 0.8)         // Пурпурный
+        case .time: return (red: 0.4, green: 0.7, blue: 0.95)         // Синий
+        case .angle: return (red: 0.6, green: 0.9, blue: 0.4)         // Зеленый
+        case .fuelConsumption: return (red: 0.8, green: 0.7, blue: 0.5) // Коричневатый
+        }
+    }
 }
 
 /// Linear or specialised conversion strategies.

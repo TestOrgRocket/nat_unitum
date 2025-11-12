@@ -1,0 +1,32 @@
+{
+  "source": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "No Internet Connection",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 273
+        }
+      },
+      {
+        "comment": "",
+        "key": "Retry",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 274
+        }
+      },
+      {
+        "comment": "",
+        "key": "Alert",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 674
+        }
+      }
+    ]
+  },
+  "version": 1
+}

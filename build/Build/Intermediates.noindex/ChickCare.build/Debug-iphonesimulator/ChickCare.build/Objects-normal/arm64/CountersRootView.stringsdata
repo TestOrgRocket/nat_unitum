@@ -1,0 +1,248 @@
+{
+  "source": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/CountersRootView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Counters",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 24
+        }
+      },
+      {
+        "comment": "",
+        "key": "COUNTERS",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 42
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add a counter to start tracking.",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 52
+        }
+      },
+      {
+        "comment": "",
+        "key": "Step: %@",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 72
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete",
+        "location": {
+          "startingColumn": 51,
+          "startingLine": 90
+        }
+      },
+      {
+        "comment": "",
+        "key": "STOPWATCH",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 101
+        }
+      },
+      {
+        "comment": "",
+        "key": "Stopwatch",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 114
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add counter",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 194
+        }
+      },
+      {
+        "comment": "",
+        "key": "Step: %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 238
+        }
+      },
+      {
+        "comment": "",
+        "key": "OVERVIEW",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 305
+        }
+      },
+      {
+        "comment": "",
+        "key": "Name",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 318
+        }
+      },
+      {
+        "comment": "",
+        "key": "- %@",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 334
+        }
+      },
+      {
+        "comment": "",
+        "key": "+ %@",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 353
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reset",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 371
+        }
+      },
+      {
+        "comment": "",
+        "key": "SETTINGS",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 383
+        }
+      },
+      {
+        "comment": "",
+        "key": "Lower limit",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 441
+        }
+      },
+      {
+        "comment": "",
+        "key": "Upper limit",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 447
+        }
+      },
+      {
+        "comment": "",
+        "key": "Step:",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 398
+        }
+      },
+      {
+        "comment": "",
+        "key": "Haptics",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 438
+        }
+      },
+      {
+        "comment": "",
+        "key": "NEW COUNTER",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 515
+        }
+      },
+      {
+        "comment": "",
+        "key": "Name",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 521
+        }
+      },
+      {
+        "comment": "",
+        "key": "Step:",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 532
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 577
+        }
+      },
+      {
+        "comment": "",
+        "key": "Save",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 589
+        }
+      },
+      {
+        "comment": "",
+        "key": "Pause",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 667
+        }
+      },
+      {
+        "comment": "",
+        "key": "Start",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 667
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reset",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 684
+        }
+      },
+      {
+        "comment": "",
+        "key": "Save to Log",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 696
+        }
+      },
+      {
+        "comment": "",
+        "key": "Export to Notes",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 708
+        }
+      },
+      {
+        "comment": "",
+        "key": "Export to Notes",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 721
+        }
+      }
+    ]
+  },
+  "version": 1
+}

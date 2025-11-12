@@ -1,0 +1,31 @@
+dependencies: \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseInstallations.build/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsIDController.m \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsIDController.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/PromisesObjC.build/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromises.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/GoogleUtilities.build/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseCore/Extension/FirebaseCoreInternal.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseCore.build/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRAppInternal.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRComponent.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRComponentContainer.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRComponentType.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRHeartbeatLogger.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRLibrary.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRLogger.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Errors/FIRInstallationsErrorUtil.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallationsErrors.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallationsItem.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsStatus.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallationsLogger.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/IIDMigration/FIRInstallationsIIDStore.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/IIDMigration/FIRInstallationsIIDTokenStore.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsAPI/FIRInstallationsAPIService.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsBackoffController.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRCurrentDateProvider.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsSingleOperationPromiseCache.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsStore/FIRInstallationsStore.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Errors/FIRInstallationsHTTPError.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsStore/FIRInstallationsStoredAuthToken.h

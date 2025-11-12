@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseMessaging.build/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessaging.m \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Public/FirebaseMessaging/FIRMessaging.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/GoogleUtilities.build/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseCore/Extension/FirebaseCoreInternal.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseCore.build/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRAppInternal.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRComponent.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRComponentContainer.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRComponentType.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRHeartbeatLogger.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRLibrary.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseCore/Extension/FIRLogger.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseInstallations/Source/Library/Private/FirebaseInstallationsInternal.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseInstallations.build/module.modulemap \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Interop/FIRMessagingInterop.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingAnalytics.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/Interop/Analytics/Public/FIRAnalyticsInterop.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingCode.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingConstants.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingContextManagerService.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingDefines.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingLogger.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingPubSub.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingRemoteNotificationsProxy.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingRmqManager.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingSyncMessageManager.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessagingUtilities.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/FIRMessaging_Private.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/NSError+FIRMessaging.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingAuthService.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingCheckinService.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenInfo.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingAPNSInfo.h \
+  /Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/Pods/FirebaseMessaging/FirebaseMessaging/Sources/Token/FIRMessagingTokenManager.h

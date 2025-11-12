@@ -5,44 +5,124 @@ struct SettingsRootView: View {
     @State private var precision: Double = 2
 
     var body: some View {
-        Form {
-            Section(header: Text("Precision")) {
-                Stepper(value: $precision, in: 0...6, step: 1) {
-                    Text("Decimal places: \(Int(precision))")
-                }
-                .onChange(of: precision) { newValue in
-                    state.updatePrecision(Int(newValue))
-                }
-            }
-
-            Section(header: Text("Format")) {
-                Toggle("Use grouping separators", isOn: Binding(
-                    get: { state.settings.groupingSeparatorEnabled },
-                    set: { newValue in
-                        state.settings.groupingSeparatorEnabled = newValue
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    // Precision
+                    SectionHeader(title: "Precision")
+                    HStack {
+                        Text("Decimal places: \(Int(precision))")
+                            .foregroundColor(.primary)
+                        Spacer()
+                        Stepper("", value: $precision, in: 0...6, step: 1)
+                            .labelsHidden()
+                            .onChange(of: precision) { newValue in
+                                state.updatePrecision(Int(newValue))
+                            }
                     }
-                ))
-            }
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(Color.panelBackground))
+                    .shadow(color: Color.black.opacity(0.04), radius: 6, x: 0, y: 3)
 
-            Section(header: Text("Defaults")) {
-                ForEach(MeasurementCategory.allCases, id: \.id) { category in
-                    NavigationLink(category.title) {
-                        DefaultUnitPicker(category: category)
+                    // Format
+                    SectionHeader(title: "Format")
+                    HStack {
+                        Text("Use grouping separators")
+                            .foregroundColor(.primary)
+                        Spacer()
+                        Toggle("", isOn: Binding(
+                            get: { state.settings.groupingSeparatorEnabled },
+                            set: { newValue in state.settings.groupingSeparatorEnabled = newValue }
+                        ))
+                        .labelsHidden()
+                    }
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(Color.panelBackground))
+                    .shadow(color: Color.black.opacity(0.04), radius: 6, x: 0, y: 3)
+
+                    // Defaults
+                    SectionHeader(title: "Defaults")
+                    VStack(spacing: 12) {
+                        ForEach(MeasurementCategory.allCases, id: \.id) { category in
+                            NavigationLink(destination: DefaultUnitPicker(category: category)) {
+                                HStack {
+                                    Text(category.title)
+                                        .foregroundColor(.primary)
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                        .foregroundColor(Color.gray)
+                                }
+                                .padding()
+                                .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(Color.panelBackground))
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                    }
+
+                    // Data
+                    SectionHeader(title: "Data")
+                    HStack {
+                        Button("Clear history") { state.history.removeAll() }
+                            .foregroundColor(.red)
+                        Spacer()
+                    }
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(Color.panelBackground))
+
+                    // Links
+                    SectionHeader(title: "Support")
+                    HStack {
+                        Button(action: {
+                            if let url = URL(string: "https://unitumapp.com/privacy-policy.html") {
+                                UIApplication.shared.open(url)
+                            }
+                        }) {
+                            HStack(spacing: 12) {
+                                Image(systemName: "lock.shield")
+                                    .foregroundColor(Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0))
+                                Text("Privacy Policy")
+                                    .foregroundColor(.primary)
+                            }
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(Color.panelBackground))
+                        }
+                        Spacer()
                     }
                 }
-            }
-
-            Section(header: Text("Data")) {
-                Button("Clear history") {
-                    state.history.removeAll()
-                }
-                .foregroundColor(.red)
+                .padding()
             }
         }
         .onAppear {
             precision = Double(state.settings.precision)
         }
-        .navigationTitle("Settings")
+        .gradientNavigationTitle("Settings")
+    }
+}
+
+
+
+private struct SectionHeader: View {
+    let title: String
+
+    var body: some View {
+        HStack {
+            Text(title.uppercased())
+                .font(.caption.weight(.semibold))
+                .foregroundColor(Color(red: 40/255, green: 115/255, blue: 150/255))
+            Spacer()
+        }
+        .padding(.leading, 4)
     }
 }
 
@@ -53,30 +133,54 @@ private struct DefaultUnitPicker: View {
     @State private var toSelection: UnitDefinition?
 
     var body: some View {
-        Form {
-            Section(header: Text("From")) {
-                Picker("From", selection: Binding(
-                    get: { fromSelection?.id ?? "" },
-                    set: { newValue in fromSelection = state.units(for: category).first { $0.id == newValue } }
-                )) {
-                    ForEach(state.units(for: category)) { unit in
-                        Text("\(unit.name) (\(unit.symbol))").tag(unit.id)
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            
+            ScrollView {
+                VStack(alignment: .leading, spacing: 18) {
+                    SectionHeader(title: "From")
+                    VStack {
+                        Picker("From", selection: Binding(
+                            get: { fromSelection?.id ?? "" },
+                            set: { newValue in fromSelection = state.units(for: category).first { $0.id == newValue } }
+                        )) {
+                            ForEach(state.units(for: category)) { unit in
+                                Text("\(unit.name) (\(unit.symbol))").tag(unit.id)
+                            }
+                        }
+                        .pickerStyle(.inline)
                     }
-                }
-            }
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(Color.white))
 
-            Section(header: Text("To")) {
-                Picker("To", selection: Binding(
-                    get: { toSelection?.id ?? "" },
-                    set: { newValue in toSelection = state.units(for: category).first { $0.id == newValue } }
-                )) {
-                    ForEach(state.units(for: category)) { unit in
-                        Text("\(unit.name) (\(unit.symbol))").tag(unit.id)
+                    SectionHeader(title: "To")
+                    VStack {
+                        Picker("To", selection: Binding(
+                            get: { toSelection?.id ?? "" },
+                            set: { newValue in toSelection = state.units(for: category).first { $0.id == newValue } }
+                        )) {
+                            ForEach(state.units(for: category)) { unit in
+                                Text("\(unit.name) (\(unit.symbol))").tag(unit.id)
+                            }
+                        }
+                        .pickerStyle(.inline)
                     }
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(Color.white))
                 }
+                .padding()
             }
         }
-        .navigationTitle(category.title)
+        .gradientNavigationTitle(category.title)
         .onAppear(perform: configure)
         .onDisappear(perform: persistDefaults)
     }

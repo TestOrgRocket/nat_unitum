@@ -1,68 +1,128 @@
+
 import SwiftUI
 
 struct MeasurementToolkitRootView: View {
     @EnvironmentObject private var state: MeasurementToolkitState
+    @State private var selectedTab: Tab = .converter
 
-    var body: some View {
-        TabView {
-            if #available(iOS 16.0, *) {
-                NavigationStack { ConverterRootView() }
-                    .tabItem { Label("Converter", systemImage: "arrow.triangle.2.circlepath") }
-            } else {
-                // Fallback on earlier versions
-            }
+    enum Tab: Int, CaseIterable {
+        case converter, favorites, counters, units, reference, settings
 
-            if #available(iOS 16.0, *) {
-                NavigationStack { FavoritesHistoryView() }
-                    .tabItem { Label("Favorites", systemImage: "star.circle") }
-            } else {
-                // Fallback on earlier versions
+        var title: String {
+            switch self {
+            case .converter: return "Converter"
+            case .favorites: return "Favorites"
+            case .counters: return "Counters"
+            case .units: return "Units"
+            case .reference: return "Reference"
+            case .settings: return "Settings"
             }
-
-            if #available(iOS 16.0, *) {
-                NavigationStack { CountersRootView() }
-                    .tabItem { Label("Counters", systemImage: "number") }
-            } else {
-                // Fallback on earlier versions
-            }
-
-            if #available(iOS 16.0, *) {
-                NavigationStack { CustomUnitsRootView() }
-                    .tabItem { Label("Units", systemImage: "slider.horizontal.3") }
-            } else {
-                // Fallback on earlier versions
-            }
-
-            if #available(iOS 16.0, *) {
-                NavigationStack { ReferenceRootView() }
-                    .tabItem { Label("Reference", systemImage: "book") }
-            } else {
-                // Fallback on earlier versions
-            }
-
-            if #available(iOS 16.0, *) {
-                NavigationStack { SettingsRootView() }
-                    .tabItem { Label("Settings", systemImage: "gearshape") }
-            } else {
-                // Fallback on earlier versions
-            }
-            
-            PrivacyPolicyView()
-            .tabItem {
-                Label("Privacy Policy", systemImage: "lock.shield")
+        }
+        var systemImage: String {
+            switch self {
+            case .converter: return "arrow.triangle.2.circlepath"
+            case .favorites: return "star.circle"
+            case .counters: return "number"
+            case .units: return "slider.horizontal.3"
+            case .reference: return "book"
+            case .settings: return "gearshape"
             }
         }
     }
-}
 
-
-struct PrivacyPolicyView: View {
     var body: some View {
-        Color.clear // ничего не показываем
-            .onAppear {
-                if let url = URL(string: "https://unitumapp.com/privacy-policy.html") {
-                    UIApplication.shared.open(url)
+        VStack(spacing: 0) {
+            ZStack {
+                switch selectedTab {
+                case .converter:
+                    if #available(iOS 16.0, *) {
+                        NavigationStack { ConverterRootView() }
+                    }
+                case .favorites:
+                    if #available(iOS 16.0, *) {
+                        NavigationStack { FavoritesHistoryView() }
+                    }
+                case .counters:
+                    if #available(iOS 16.0, *) {
+                        NavigationStack { CountersRootView() }
+                    }
+                case .units:
+                    if #available(iOS 16.0, *) {
+                        NavigationStack { CustomUnitsRootView() }
+                    }
+                case .reference:
+                    if #available(iOS 16.0, *) {
+                        NavigationStack { ReferenceRootView() }
+                    }
+                case .settings:
+                    if #available(iOS 16.0, *) {
+                        NavigationStack { SettingsRootView() }
+                    }
+                // Privacy policy теперь только в настройках
                 }
             }
+            CustomTabBar(selectedTab: $selectedTab)
+        }
+        .ignoresSafeArea(.keyboard)
     }
 }
+
+private struct CustomTabBar: View {
+    @Binding var selectedTab: MeasurementToolkitRootView.Tab
+
+    let gradientColors = [
+        Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+        Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+        Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+    ]
+
+    var body: some View {
+        HStack {
+            ForEach(MeasurementToolkitRootView.Tab.allCases, id: \ .self) { tab in
+                Spacer()
+                Button(action: { selectedTab = tab }) {
+                    VStack(spacing: 2) {
+                        ZStack {
+                            if selectedTab == tab {
+                                RadialGradient(
+                                    gradient: Gradient(colors: gradientColors),
+                                    center: .center,
+                                    startRadius: 2,
+                                    endRadius: 22
+                                )
+                                .frame(width: 36, height: 36)
+                                .clipShape(Circle())
+                                .shadow(color: gradientColors[0].opacity(0.18), radius: 6, x: 0, y: 2)
+                                Image(systemName: tab.systemImage)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 22, weight: .semibold))
+                            } else {
+                                Circle()
+                                    .fill(Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0))
+                                    .frame(width: 36, height: 36)
+                                    .opacity(0.12)
+                                Image(systemName: tab.systemImage)
+                                    .foregroundColor(Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0))
+                                    .font(.system(size: 22, weight: .regular))
+                            }
+                        }
+                        Text(tab.title)
+                            .font(.caption2)
+                            .foregroundColor(selectedTab == tab ? Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0) : Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0).opacity(0.7))
+                            .padding(.top, 1)
+                    }
+                }
+                .buttonStyle(.plain)
+                Spacer()
+            }
+        }
+        .padding(.top, 6)
+        .padding(.bottom, 10)
+        .background(
+            Color.white
+                .shadow(color: Color.black.opacity(0.07), radius: 8, x: 0, y: -2)
+        )
+    }
+}
+
+

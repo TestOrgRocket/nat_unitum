@@ -1,0 +1,120 @@
+{
+  "source": "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/FavoritesHistoryView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Favorite conversions will appear here.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 92
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open converter for this preset",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "History is empty.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 143
+        }
+      },
+      {
+        "comment": "",
+        "key": "Pin",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 180
+        }
+      },
+      {
+        "comment": "",
+        "key": "Last value %lf",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 255
+        }
+      },
+      {
+        "comment": "",
+        "key": "Preset name",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 337
+        }
+      },
+      {
+        "comment": "",
+        "key": "Preset name",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 349
+        }
+      },
+      {
+        "comment": "",
+        "key": "Conversion",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 369
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enter value",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 373
+        }
+      },
+      {
+        "comment": "",
+        "key": "Result",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 384
+        }
+      },
+      {
+        "comment": "",
+        "key": "Save to Notes",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 413
+        }
+      },
+      {
+        "comment": "",
+        "key": "Done",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 476
+        }
+      },
+      {
+        "comment": "",
+        "key": "Value",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 611
+        }
+      },
+      {
+        "comment": "",
+        "key": "Result",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 626
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>11</integer>
+	<key>logs</key>
+	<dict>
+		<key>03A4E020-537C-4DD6-87C8-A9A15724B170</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>03A4E020-537C-4DD6-87C8-A9A15724B170.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ChickCare project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ChickCare</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Cleaning workspace ChickCare with scheme ChickCare</string>
+			<key>timeStartedRecording</key>
+			<real>784630375.36188197</real>
+			<key>timeStoppedRecording</key>
+			<real>784630376.362764</real>
+			<key>title</key>
+			<string>Cleaning workspace ChickCare with scheme ChickCare</string>
+			<key>uniqueIdentifier</key>
+			<string>03A4E020-537C-4DD6-87C8-A9A15724B170</string>
+		</dict>
+		<key>E15F5FE5-36E0-4F39-B37E-FDD59A6DA720</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E15F5FE5-36E0-4F39-B37E-FDD59A6DA720.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ChickCare project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ChickCare</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Cleaning workspace ChickCare with scheme ChickCare</string>
+			<key>timeStartedRecording</key>
+			<real>784628087.69340301</real>
+			<key>timeStoppedRecording</key>
+			<real>784628088.66730201</real>
+			<key>title</key>
+			<string>Cleaning workspace ChickCare with scheme ChickCare</string>
+			<key>uniqueIdentifier</key>
+			<string>E15F5FE5-36E0-4F39-B37E-FDD59A6DA720</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

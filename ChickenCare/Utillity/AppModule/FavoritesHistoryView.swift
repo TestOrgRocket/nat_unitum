@@ -23,14 +23,51 @@ struct FavoritesHistoryView: View {
     }
 
     var body: some View {
-        VStack(spacing: 16) {
-            Picker("Section", selection: $selectedTab) {
-                ForEach(FavoritesHistoryTab.allCases) { tab in
-                    Text(tab.title).tag(tab)
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            
+            VStack(spacing: 0) {
+                // Кастомный сегментированный контрол
+                HStack(spacing: 0) {
+                    ForEach(FavoritesHistoryTab.allCases) { tab in
+                        Button {
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                selectedTab = tab
+                            }
+                        } label: {
+                            Text(tab.title)
+                                .font(.system(size: 16, weight: .semibold))
+                                .foregroundColor(selectedTab == tab ? .white : Color.white.opacity(0.7))
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 12)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                        .fill(
+                                            selectedTab == tab
+                                            ? Color.white.opacity(0.25)
+                                            : Color.clear
+                                        )
+                                )
+                        }
+                    }
                 }
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal)
+                .padding(4)
+                .background(
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .fill(Color.white.opacity(0.15))
+                )
+                .padding(.horizontal, 16)
+                .padding(.top, 12)
+                .padding(.bottom, 12)
 
             if selectedTab == .favorites {
                 favoritesList
@@ -38,7 +75,8 @@ struct FavoritesHistoryView: View {
                 historyList
             }
         }
-    .navigationTitle("Favorites & History")
+        }
+    .gradientNavigationTitle("Favorites & History")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 EditButton()
@@ -58,6 +96,27 @@ struct FavoritesHistoryView: View {
                     NavigationLink(destination: PresetConversionView(preset: preset)) {
                         FavoriteRow(preset: preset)
                     }
+                    .buttonStyle(.plain)
+                    .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
+                    .listRowBackground(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .fill(Color.white.opacity(0.85))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                    .stroke(
+                                        Color(
+                                            red: preset.category.color.red,
+                                            green: preset.category.color.green,
+                                            blue: preset.category.color.blue
+                                        ),
+                                        lineWidth: 2
+                                    )
+                            )
+                            .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 4)
+                    )
+                    .listRowSeparator(.hidden)
                     .accessibilityHint("Open converter for this preset")
                 }
                 .onDelete { indexSet in
@@ -68,7 +127,14 @@ struct FavoritesHistoryView: View {
                 }
             }
         }
-        .listStyle(.insetGrouped)
+        .apply { view in
+            if #available(iOS 16.0, *) {
+                view.scrollContentBackground(.hidden)
+            } else {
+                view
+            }
+        }
+        .listStyle(.plain)
     }
 
     private var historyList: some View {
@@ -81,6 +147,27 @@ struct FavoritesHistoryView: View {
                     NavigationLink(destination: HistoryConversionView(entry: entry)) {
                         HistoryListRow(entry: entry)
                     }
+                    .buttonStyle(.plain)
+                    .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
+                    .listRowBackground(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .fill(Color.white.opacity(0.85))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                    .stroke(
+                                        Color(
+                                            red: entry.category.color.red,
+                                            green: entry.category.color.green,
+                                            blue: entry.category.color.blue
+                                        ),
+                                        lineWidth: 2
+                                    )
+                            )
+                            .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 4)
+                    )
+                    .listRowSeparator(.hidden)
                     .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                         Button {
                             if let from = state.unit(for: entry.fromUnit), let to = state.unit(for: entry.toUnit) {
@@ -97,7 +184,14 @@ struct FavoritesHistoryView: View {
                 }
             }
         }
-        .listStyle(.insetGrouped)
+        .apply { view in
+            if #available(iOS 16.0, *) {
+                view.scrollContentBackground(.hidden)
+            } else {
+                view
+            }
+        }
+        .listStyle(.plain)
     }
 
     private func identity(for unit: UnitDefinition) -> UnitIdentity {
@@ -114,27 +208,61 @@ private struct FavoriteRow: View {
     let preset: ConversionPreset
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack {
-                Text(title)
-                    .font(.headline)
-                Spacer()
-                if let value = preset.lastInputValue {
-                    Text(shortFormatter.string(from: NSNumber(value: value)) ?? "")
+        HStack(spacing: 12) {
+            // Эмоджи категории
+            Text(preset.category.emoji)
+                .font(.title2)
+            
+            VStack(alignment: .leading, spacing: 6) {
+                // Конверсия с иконкой
+                HStack(spacing: 8) {
+                    Text(symbol(for: preset.fromUnit))
+                        .font(.headline)
+                    Image(systemName: "arrow.right.circle.fill")
+                        .font(.caption)
+                        .foregroundColor(
+                            Color(
+                                red: preset.category.color.red,
+                                green: preset.category.color.green,
+                                blue: preset.category.color.blue
+                            )
+                        )
+                    Text(symbol(for: preset.toUnit))
+                        .font(.headline)
+                }
+                
+                // Название или категория
+                if !preset.title.isEmpty && preset.title != "\(symbol(for: preset.fromUnit)) → \(symbol(for: preset.toUnit))" {
+                    Text(preset.title)
                         .font(.caption)
                         .foregroundColor(.secondary)
-                        .accessibilityLabel("Last value \(value)")
                 }
             }
-
-            HStack(spacing: 4) {
-                Text(symbol(for: preset.fromUnit))
-                Image(systemName: "arrow.right")
-                Text(symbol(for: preset.toUnit))
+            
+            Spacer()
+            
+            // Последнее значение
+            if let value = preset.lastInputValue {
+                Text(shortFormatter.string(from: NSNumber(value: value)) ?? "")
+                    .font(.title3.weight(.semibold))
+                    .foregroundColor(
+                        Color(
+                            red: preset.category.color.red,
+                            green: preset.category.color.green,
+                            blue: preset.category.color.blue
+                        )
+                    )
+                    .accessibilityLabel("Last value \(value)")
             }
-            .font(.subheadline)
-            .foregroundColor(.secondary)
+            
+            // Стрелка перехода
+            Image(systemName: "chevron.right")
+                .font(.caption)
+                .foregroundColor(.secondary)
         }
+        .padding(.leading, 36)
+        .padding(.trailing, 16)
+        .padding(.vertical, 14)
         .accessibilityElement(children: .combine)
     }
 
@@ -180,53 +308,136 @@ private struct PresetConversionView: View {
     }
 
     var body: some View {
-        Form {
-            Section(header: Text("Preset")) {
-                HStack {
-                    TextField("Name", text: Binding(
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+
+            VStack(spacing: 28) {
+                // Preset Card
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack(spacing: 10) {
+                        Text(symbol(for: preset.fromUnit))
+                            .font(.title.bold())
+                        Image(systemName: "arrow.right")
+                            .font(.title2)
+                            .foregroundColor(.blue.opacity(0.7))
+                        Text(symbol(for: preset.toUnit))
+                            .font(.title.bold())
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+
+                    TextField("Preset name", text: Binding(
                         get: { preset.title },
                         set: { newValue in
                             preset.title = newValue
                             state.updateFavorite(preset)
-                        }
-                    ))
-                        .textInputAutocapitalization(.words)
-                        .accessibilityLabel("Preset name")
+                        })
+                    )
+                    .font(.body)
+                    .padding(10)
+                    .background(Color.white.opacity(0.15))
+                    .cornerRadius(10)
+                    .foregroundColor(.primary)
+                    .accessibilityLabel("Preset name")
                 }
+                .padding(20)
+                .background(Color.white.opacity(0.85))
+                .cornerRadius(22)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 22, style: .continuous)
+                        .stroke(
+                            Color(
+                                red: state.unit(for: preset.fromUnit)?.category.color.red ?? 0.0,
+                                green: state.unit(for: preset.fromUnit)?.category.color.green ?? 0.0,
+                                blue: state.unit(for: preset.fromUnit)?.category.color.blue ?? 0.0
+                            ),
+                            lineWidth: 2
+                        )
+                )
+                .shadow(color: Color.black.opacity(0.08), radius: 10, x: 0, y: 4)
 
-                HStack {
-                    Text(symbol(for: preset.fromUnit))
-                    Image(systemName: "arrow.right")
-                    Text(symbol(for: preset.toUnit))
-                }
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            }
+                // Conversion Card
+                VStack(alignment: .leading, spacing: 18) {
+                    Text("Conversion")
+                        .font(.headline)
+                        .foregroundColor(.primary)
 
-            Section(header: Text("Conversion")) {
-                TextField("0", text: $inputText)
-                    .keyboardType(.decimalPad)
-                    .focused($isFocused)
-                    .onSubmit(convert)
-                    .toolbar { ToolbarItemGroup(placement: .keyboard) { keyboardToolbar } }
+                    TextField("Enter value", text: $inputText)
+                        .keyboardType(.decimalPad)
+                        .focused($isFocused)
+                        .padding(12)
+                        .background(Color.white.opacity(0.15))
+                        .cornerRadius(10)
+                        .foregroundColor(.primary)
+                        .onSubmit(convert)
+                        .toolbar { ToolbarItemGroup(placement: .keyboard) { keyboardToolbar } }
 
-                HStack {
-                    Text("Result")
-                    Spacer()
-                    Text(resultText)
-                        .font(.body.weight(.semibold))
-                }
-            }
-
-            if let numeric = resultNumeric {
-                Section {
-                    Button("Save to Notes") {
-                        exportToNotes(numeric: numeric)
+                    HStack {
+                        Text("Result")
+                            .font(.body)
+                            .foregroundColor(.primary)
+                        Spacer()
+                        Text(resultText)
+                            .font(.title2.bold())
+                            .foregroundColor(.primary)
+                            .animation(.easeInOut, value: resultText)
                     }
                 }
+                .padding(20)
+                .background(Color.white.opacity(0.85))
+                .cornerRadius(22)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 22, style: .continuous)
+                        .stroke(
+                            Color(
+                                red: state.unit(for: preset.fromUnit)?.category.color.red ?? 0.0,
+                                green: state.unit(for: preset.fromUnit)?.category.color.green ?? 0.0,
+                                blue: state.unit(for: preset.fromUnit)?.category.color.blue ?? 0.0
+                            ),
+                            lineWidth: 2
+                        )
+                )
+                .shadow(color: Color.black.opacity(0.08), radius: 10, x: 0, y: 4)
+
+                // Save Button
+                if let numeric = resultNumeric {
+                    Button(action: { exportToNotes(numeric: numeric) }) {
+                        Text("Save to Notes")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [
+                                        Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                                        Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                                    ]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            .cornerRadius(16)
+                            .shadow(color: Color.black.opacity(0.10), radius: 6, x: 0, y: 3)
+                    }
+                    .padding(.horizontal, 8)
+                    .transition(.opacity.combined(with: .move(edge: .bottom)))
+                }
+
+                Spacer()
             }
+            .padding(.top, 32)
+            .padding(.horizontal, 18)
         }
-    .navigationTitle(preset.title.isEmpty ? "Preset" : preset.title)
+        .gradientNavigationTitle(preset.title.isEmpty ? "Preset" : preset.title)
         .onAppear(perform: convert)
     }
 
@@ -283,20 +494,63 @@ private struct HistoryListRow: View {
     let entry: ConversionHistoryEntry
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            HStack {
-                Text(symbol(for: entry.fromUnit))
-                Image(systemName: "arrow.right")
-                Text(symbol(for: entry.toUnit))
-                Spacer()
+        HStack(spacing: 12) {
+            // Эмоджи категории
+            Text(entry.category.emoji)
+                .font(.title2)
+            
+            VStack(alignment: .leading, spacing: 6) {
+                // Конверсия с иконкой
+                HStack(spacing: 8) {
+                    Text(symbol(for: entry.fromUnit))
+                        .font(.headline)
+                    Image(systemName: "arrow.right.circle.fill")
+                        .font(.caption)
+                        .foregroundColor(
+                            Color(
+                                red: entry.category.color.red,
+                                green: entry.category.color.green,
+                                blue: entry.category.color.blue
+                            )
+                        )
+                    Text(symbol(for: entry.toUnit))
+                        .font(.headline)
+                }
+                
+                // Значения конверсии
+                HStack(spacing: 4) {
+                    Text(value(entry.inputValue))
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    Image(systemName: "arrow.right")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                    Text(value(entry.outputValue))
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+            }
+            
+            Spacer()
+            
+            // Время
+            VStack(alignment: .trailing, spacing: 2) {
                 Text(entry.timestamp, style: .time)
                     .font(.caption)
                     .foregroundColor(.secondary)
+                Text(entry.timestamp, style: .date)
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
             }
-            Text("\(value(entry.inputValue)) → \(value(entry.outputValue))")
+            
+            // Стрелка перехода
+            Image(systemName: "chevron.right")
                 .font(.caption)
                 .foregroundColor(.secondary)
         }
+        .padding(.leading, 36)
+        .padding(.trailing, 16)
+        .padding(.vertical, 14)
     }
 
     private func symbol(for identity: UnitIdentity) -> String {
@@ -313,31 +567,113 @@ private struct HistoryConversionView: View {
     let entry: ConversionHistoryEntry
 
     var body: some View {
-        Form {
-            Section(header: Text("Conversion")) {
-                HStack {
-                    Text("From")
-                    Spacer()
-                    Text(symbol(for: entry.fromUnit))
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+
+            VStack(spacing: 24) {
+                Spacer().frame(height: 32)
+                VStack(spacing: 0) {
+                    // From → To
+                    HStack(spacing: 12) {
+                        Text(symbol(for: entry.fromUnit))
+                            .font(.title2.bold())
+                            .foregroundColor(.primary)
+                        Image(systemName: "arrow.right")
+                            .font(.title2)
+                            .foregroundColor(
+                                Color(
+                                    red: state.unit(for: entry.fromUnit)?.category.color.red ?? 0.0,
+                                    green: state.unit(for: entry.fromUnit)?.category.color.green ?? 0.0,
+                                    blue: state.unit(for: entry.fromUnit)?.category.color.blue ?? 0.0
+                                )
+                            )
+                        Text(symbol(for: entry.toUnit))
+                            .font(.title2.bold())
+                            .foregroundColor(.primary)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 18)
+                    .padding(.bottom, 8)
+
+                    Divider().padding(.horizontal, 12)
+
+                    // Value row
+                    HStack {
+                        Text("Value")
+                            .font(.body)
+                            .foregroundColor(.secondary)
+                        Spacer()
+                        Text(value(entry.inputValue))
+                            .font(.body.weight(.semibold))
+                            .foregroundColor(.primary)
+                    }
+                    .padding(.horizontal, 18)
+                    .padding(.vertical, 10)
+
+                    Divider().padding(.horizontal, 12)
+
+                    // Result row (accent)
+                    HStack {
+                        Text("Result")
+                            .font(.body)
+                            .foregroundColor(.secondary)
+                        Spacer()
+                        Text(value(entry.outputValue))
+                            .font(.title2.bold())
+                            .foregroundColor(
+                                Color(
+                                    red: state.unit(for: entry.fromUnit)?.category.color.red ?? 0.0,
+                                    green: state.unit(for: entry.fromUnit)?.category.color.green ?? 0.0,
+                                    blue: state.unit(for: entry.fromUnit)?.category.color.blue ?? 0.0
+                                )
+                            )
+                    }
+                    .padding(.horizontal, 18)
+                    .padding(.vertical, 14)
                 }
-                HStack {
-                    Text("To")
-                    Spacer()
-                    Text(symbol(for: entry.toUnit))
-                }
-                HStack {
-                    Text("Value")
-                    Spacer()
-                    Text(value(entry.inputValue))
-                }
-                HStack {
-                    Text("Result")
-                    Spacer()
-                    Text(value(entry.outputValue))
-                }
+                .background(Color.white.opacity(0.85))
+                .cornerRadius(22)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 22, style: .continuous)
+                        .stroke(
+                            Color(
+                                red: state.unit(for: entry.fromUnit)?.category.color.red ?? 0.0,
+                                green: state.unit(for: entry.fromUnit)?.category.color.green ?? 0.0,
+                                blue: state.unit(for: entry.fromUnit)?.category.color.blue ?? 0.0
+                            ),
+                            lineWidth: 2
+                        )
+                )
+                .padding(.horizontal, 24)
+                .shadow(color: Color.black.opacity(0.08), radius: 10, x: 0, y: 4)
+
+                Spacer()
             }
         }
-    .navigationTitle("History Entry")
+        .gradientNavigationTitle("History Entry")
+    }
+
+    private func row(label: String, value: String) -> some View {
+        HStack {
+            Text(label)
+                .font(.body)
+                .foregroundColor(.primary)
+            Spacer()
+            Text(value)
+                .font(.body.weight(.semibold))
+                .foregroundColor(.primary)
+        }
+        .padding(.horizontal, 18)
+        .padding(.vertical, 12)
     }
 
     private func symbol(for identity: UnitIdentity) -> String {

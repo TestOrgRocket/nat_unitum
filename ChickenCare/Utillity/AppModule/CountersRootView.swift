@@ -6,46 +6,157 @@ struct CountersRootView: View {
     @State private var isPresentingNewCounter = false
 
     var body: some View {
-        List {
-            Section(header: Text("Counters")) {
-                if state.counters.isEmpty {
-                    Text("Add a counter to start tracking.")
-                        .foregroundColor(.secondary)
-                } else {
-                    ForEach(state.counters) { counter in
-                        NavigationLink(destination: CounterDetailView(counter: counter)) {
-                            CounterCard(counter: counter)
-                        }
-                        .swipeActions(edge: .trailing) {
-                            Button(role: .destructive) {
-                                state.removeCounter(counter)
-                            } label: {
-                                Label("Delete", systemImage: "trash")
-                            }
-                        }
-                    }
-                }
-            }
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
 
-            Section(header: Text("Stopwatch")) {
-                NavigationLink(destination: StopwatchView()) {
-                    Label("Stopwatch", systemImage: "timer")
-                }
-                if !state.stopwatchLogs.isEmpty {
-                    ForEach(state.stopwatchLogs) { log in
-                        VStack(alignment: .leading) {
-                            Text(format(duration: log.duration))
-                                .font(.headline)
-                            Text(log.recordedAt, style: .date)
-                                .font(.caption)
-                                .foregroundColor(.secondary)
+            ScrollView {
+                VStack(spacing: 28) {
+                    HStack {
+                        Text("Counters")
+                            .font(.largeTitle.bold())
+                            .foregroundColor(.white)
+                        Spacer()
+                        Button(action: { isPresentingNewCounter = true }) {
+                            Image(systemName: "plus")
+                                .font(.title2.bold())
+                                .foregroundColor(Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0))
+                                .padding(10)
+                                .background(Color.white.opacity(0.85))
+                                .clipShape(Circle())
+                                .shadow(color: Color.black.opacity(0.10), radius: 3, x: 0, y: 2)
                         }
                     }
+                    .padding(.horizontal, 18)
+                    .padding(.top, 8)
+
+                    VStack(alignment: .leading, spacing: 18) {
+                        Text("COUNTERS")
+                            .font(.caption.weight(.semibold))
+                            .foregroundColor(.white.opacity(0.6))
+                            .padding(.leading, 6)
+
+                        if state.counters.isEmpty {
+                            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                .fill(Color.white.opacity(0.85))
+                                .frame(height: 54)
+                                .overlay(
+                                    Text("Add a counter to start tracking.")
+                                        .foregroundColor(.secondary)
+                                        .font(.body)
+                                )
+                                .padding(.horizontal, 8)
+                        } else {
+                            VStack(spacing: 14) {
+                                ForEach(state.counters) { counter in
+                                    NavigationLink(destination: CounterDetailView(counter: counter)) {
+                                        HStack(spacing: 16) {
+                                            Image(systemName: "number")
+                                                .font(.title2)
+                                                .foregroundColor(Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0))
+                                                .padding(8)
+                                                .background(Color.white.opacity(0.25))
+                                                .clipShape(Circle())
+                                            VStack(alignment: .leading, spacing: 4) {
+                                                Text(counter.name.isEmpty ? "Untitled" : counter.name)
+                                                    .font(.headline)
+                                                    .foregroundColor(.primary)
+                                                Text("Step: \(MeasurementFormatterFactory.formatter(settings: state.settings).string(from: NSNumber(value: counter.step)) ?? String(counter.step))")
+                                                    .font(.caption)
+                                                    .foregroundColor(.secondary)
+                                            }
+                                            Spacer()
+                                            Text(MeasurementFormatterFactory.formatter(settings: state.settings).string(from: NSNumber(value: counter.value)) ?? String(counter.value))
+                                                .font(.title3.weight(.bold))
+                                                .foregroundColor(.primary)
+                                        }
+                                        .padding(16)
+                                        .background(Color.white.opacity(0.85))
+                                        .cornerRadius(16)
+                                        .shadow(color: Color.black.opacity(0.06), radius: 4, x: 0, y: 2)
+                                    }
+                                    .swipeActions(edge: .trailing) {
+                                        Button(role: .destructive) {
+                                            state.removeCounter(counter)
+                                        } label: {
+                                            Label("Delete", systemImage: "trash")
+                                        }
+                                    }
+                                }
+                            }
+                            .padding(.horizontal, 2)
+                        }
+                    }
+                    .padding(.horizontal, 10)
+
+                    VStack(alignment: .leading, spacing: 18) {
+                        Text("STOPWATCH")
+                            .font(.caption.weight(.semibold))
+                            .foregroundColor(.white.opacity(0.6))
+                            .padding(.leading, 6)
+
+                        NavigationLink(destination: StopwatchView()) {
+                            HStack(spacing: 14) {
+                                Image(systemName: "timer")
+                                    .font(.title2)
+                                    .foregroundColor(Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0))
+                                    .padding(8)
+                                    .background(Color.white.opacity(0.25))
+                                    .clipShape(Circle())
+                                Text("Stopwatch")
+                                    .font(.headline)
+                                    .foregroundColor(.primary)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(.secondary)
+                            }
+                            .padding(16)
+                            .background(Color.white.opacity(0.85))
+                            .cornerRadius(16)
+                            .shadow(color: Color.black.opacity(0.06), radius: 4, x: 0, y: 2)
+                        }
+                        .padding(.horizontal, 2)
+
+                        if !state.stopwatchLogs.isEmpty {
+                            VStack(spacing: 10) {
+                                ForEach(state.stopwatchLogs) { log in
+                                    HStack {
+                                        Image(systemName: "clock")
+                                            .font(.body)
+                                            .foregroundColor(.secondary)
+                                        Text(format(duration: log.duration))
+                                            .font(.body.weight(.semibold))
+                                        Spacer()
+                                        Text(log.recordedAt, style: .date)
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                    }
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 8)
+                                    .background(Color.white.opacity(0.65))
+                                    .cornerRadius(12)
+                                }
+                            }
+                            .padding(.top, 2)
+                        }
+                    }
+                    .padding(.horizontal, 10)
+
+                    Spacer(minLength: 32)
                 }
+                .padding(.top, 8)
             }
         }
-    .navigationTitle("Counters")
-        .toolbar(content: toolbarContent)
+        .gradientNavigationTitle("")
+        .modifier(HideNavBarToolbar())
         .sheet(isPresented: $isPresentingNewCounter) {
             if #available(iOS 16.0, *) {
                 NavigationStack { CounterEditorView(counter: CounterItem(name: "")) }
@@ -55,6 +166,17 @@ struct CountersRootView: View {
             }
         }
     }
+
+// Helper modifier for toolbar hiding compatibility
+struct HideNavBarToolbar: ViewModifier {
+    func body(content: Content) -> some View {
+        if #available(iOS 16.0, *) {
+            content.toolbar(.hidden, for: .navigationBar)
+        } else {
+            content
+        }
+    }
+}
 
     @ToolbarContentBuilder
     private func toolbarContent() -> some ToolbarContent {
@@ -162,71 +284,184 @@ private struct CounterDetailView: View {
     }
 
     var body: some View {
-        Form {
-            Section(header: Text("Overview")) {
-                HStack {
-                    TextField("Name", text: $counter.name)
-                        .focused($focusedField, equals: .name)
-                    Spacer()
-                    Text(format(counter.value))
-                        .font(.title2.weight(.bold))
-                }
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            
+            ScrollView {
+                VStack(spacing: 24) {
+                    // Overview card
+                    VStack(spacing: 12) {
+                        HStack(alignment: .top) {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("OVERVIEW")
+                                    .font(.headline.weight(.semibold))
+                                    .textCase(.uppercase)
+                                    // stronger cyan to increase contrast against the semi-opaque white card
+                                    .foregroundColor(Color(red: 40.0/255.0, green: 115.0/255.0, blue: 150.0/255.0))
+                                    .apply {
+                                        if #available(iOS 16.0, *) {
+                                            $0.kerning(0.6)
+                                        } else {
+                                            $0
+                                        }
+                                    }
+                                    .shadow(color: Color.black.opacity(0.06), radius: 0.6, x: 0, y: 0)
+                                TextField("Name", text: $counter.name)
+                                    .focused($focusedField, equals: .name)
+                                    .font(.title3.weight(.semibold))
+                            }
+                            Spacer()
+                            Text(format(counter.value))
+                                .font(.system(size: 32, weight: .bold, design: .rounded))
+                        }
 
-                HStack(spacing: 24) {
-                    Button("- \(format(counter.step))") {
-                        impact()
-                        counter.decrement()
-                        state.updateCounter(counter)
+                        HStack(spacing: 14) {
+                            // Pill-style step buttons to improve affordance and visual structure
+                            Button(action: {
+                                impact()
+                                counter.decrement()
+                                state.updateCounter(counter)
+                            }) {
+                                Text("- \(format(counter.step))")
+                                    .font(.body.weight(.semibold))
+                                    .foregroundColor(Color(red: 40/255, green: 115/255, blue: 150/255))
+                                    .frame(minWidth: 72)
+                                    .padding(.vertical, 10)
+                                    .background(Color.white)
+                                    .cornerRadius(12)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .stroke(Color(red: 40/255, green: 115/255, blue: 150/255).opacity(0.12), lineWidth: 1)
+                                    )
+                                    .shadow(color: Color.black.opacity(0.04), radius: 2, x: 0, y: 1)
+                            }
+
+                            Button(action: {
+                                impact()
+                                counter.increment()
+                                state.updateCounter(counter)
+                            }) {
+                                Text("+ \(format(counter.step))")
+                                    .font(.body.weight(.semibold))
+                                    .foregroundColor(.white)
+                                    .frame(minWidth: 72)
+                                    .padding(.vertical, 10)
+                                    .background(
+                                        LinearGradient(gradient: Gradient(colors: [Color(red: 0/255, green: 180/255, blue: 216/255), Color(red: 72/255, green: 202/255, blue: 228/255)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                                    )
+                                    .cornerRadius(12)
+                                    .shadow(color: Color(red: 0/255, green: 180/255, blue: 216/255).opacity(0.18), radius: 6, x: 0, y: 2)
+                            }
+
+                            Spacer()
+
+                            Button(action: {
+                                counter.value = 0
+                                state.updateCounter(counter)
+                            }) {
+                                Text("Reset")
+                                    .foregroundColor(.red)
+                            }
+                        }
                     }
-                    .buttonStyle(.bordered)
+                    .padding(18)
+                    .background(Color.white.opacity(0.85))
+                    .cornerRadius(14)
+                    .shadow(color: Color.black.opacity(0.05), radius: 6, x: 0, y: 2)
 
-                    Button("+ \(format(counter.step))") {
-                        impact()
-                        counter.increment()
-                        state.updateCounter(counter)
+                    // Settings card
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("SETTINGS")
+                            .font(.headline.weight(.semibold))
+                            .textCase(.uppercase)
+                            // stronger cyan for better readability on the white card
+                            .foregroundColor(Color(red: 40.0/255.0, green: 115.0/255.0, blue: 150.0/255.0))
+                            .apply {
+                                if #available(iOS 16.0, *) {
+                                    $0.kerning(0.6)
+                                } else {
+                                    $0
+                                }
+                            }
+                            .shadow(color: Color.black.opacity(0.06), radius: 0.6, x: 0, y: 0)
+
+                        HStack(spacing: 12) {
+                            Text("Step:")
+                                .font(.body.weight(.medium))
+                            Text(format(counter.step))
+                                .font(.body.weight(.bold))
+                                .foregroundColor(Color(red: 0/255, green: 180/255, blue: 216/255))
+                            Spacer()
+                            HStack(spacing: 8) {
+                                Button(action: {
+                                    let new = (counter.step - 0.1)
+                                    counter.step = new >= 0.1 ? (round(new * 10) / 10) : 0.1
+                                    state.updateCounter(counter)
+                                }) {
+                                    Image(systemName: "minus")
+                                        .font(.headline)
+                                        .foregroundColor(Color(red: 40/255, green: 115/255, blue: 150/255))
+                                        .frame(width: 40, height: 36)
+                                        .background(Color.white)
+                                        .cornerRadius(10)
+                                        .shadow(color: Color.black.opacity(0.04), radius: 2, x: 0, y: 1)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 10).stroke(Color(red: 40/255, green: 115/255, blue: 150/255).opacity(0.08), lineWidth: 1)
+                                        )
+                                }
+                                Button(action: {
+                                    let new = (counter.step + 0.1)
+                                    counter.step = new <= 1000 ? (round(new * 10) / 10) : 1000
+                                    state.updateCounter(counter)
+                                }) {
+                                    Image(systemName: "plus")
+                                        .font(.headline)
+                                        .foregroundColor(.white)
+                                        .frame(width: 40, height: 36)
+                                        .background(Color(red: 0/255, green: 180/255, blue: 216/255))
+                                        .cornerRadius(10)
+                                        .shadow(color: Color(red: 0/255, green: 180/255, blue: 216/255).opacity(0.18), radius: 4, x: 0, y: 1)
+                                }
+                            }
+                        }
+
+                        Toggle(isOn: Binding(get: { counter.hapticsEnabled }, set: { new in counter.hapticsEnabled = new; state.updateCounter(counter) })) {
+                            Text("Haptics")
+                        }
+
+                        TextField("Lower limit", text: Binding(
+                            get: { text(from: counter.lowerBound) },
+                            set: { counter.lowerBound = double(from: $0); state.updateCounter(counter) }
+                        ))
+                        .keyboardType(.decimalPad)
+
+                        TextField("Upper limit", text: Binding(
+                            get: { text(from: counter.upperBound) },
+                            set: { counter.upperBound = double(from: $0); state.updateCounter(counter) }
+                        ))
+                        .keyboardType(.decimalPad)
                     }
-                    .buttonStyle(.borderedProminent)
+                    .padding(18)
+                    .background(Color.white.opacity(0.85))
+                    .cornerRadius(14)
+                    .shadow(color: Color.black.opacity(0.05), radius: 6, x: 0, y: 2)
+
+                    Spacer(minLength: 32)
                 }
-
-                Button("Reset") {
-                    counter.value = 0
-                    state.updateCounter(counter)
-                }
-                .foregroundColor(.red)
-            }
-
-            Section(header: Text("Settings")) {
-                Stepper(value: $counter.step, in: 0.1...1_000, step: 0.1) {
-                    Text("Step: \(format(counter.step))")
-                }
-                .onChange(of: counter.step) { _ in state.updateCounter(counter) }
-
-                Toggle("Haptics", isOn: Binding(
-                    get: { counter.hapticsEnabled },
-                    set: { newValue in
-                        counter.hapticsEnabled = newValue
-                        state.updateCounter(counter)
-                    }
-                ))
-
-                TextField("Lower limit", text: Binding(
-                    get: { text(from: counter.lowerBound) },
-                    set: { counter.lowerBound = double(from: $0) }
-                ))
-                .keyboardType(.decimalPad)
-                .focused($focusedField, equals: .lower)
-                .onChange(of: counter.lowerBound) { _ in state.updateCounter(counter) }
-
-                TextField("Upper limit", text: Binding(
-                    get: { text(from: counter.upperBound) },
-                    set: { counter.upperBound = double(from: $0) }
-                ))
-                .keyboardType(.decimalPad)
-                .focused($focusedField, equals: .upper)
-                .onChange(of: counter.upperBound) { _ in state.updateCounter(counter) }
+                .padding(.horizontal, 16)
+                .padding(.top, 12)
             }
         }
-    .navigationTitle(counter.name.isEmpty ? "Counter" : counter.name)
+    .gradientNavigationTitle(counter.name.isEmpty ? "Counter" : counter.name)
         .onDisappear { state.updateCounter(counter) }
     }
 
@@ -262,27 +497,120 @@ private struct CounterEditorView: View {
     }
 
     var body: some View {
-        Form {
-            Section(header: Text("Counter")) {
-                TextField("Name", text: $counter.name)
-                Stepper(value: $counter.step, in: 0.1...1_000, step: 0.1) {
-                    Text("Step: \(counter.step, specifier: "%.1f")")
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+
+            VStack(spacing: 28) {
+                Spacer(minLength: 18)
+                VStack(alignment: .leading, spacing: 18) {
+                    Text("NEW COUNTER")
+                        .font(.caption.weight(.semibold))
+                        .foregroundColor(.white.opacity(0.6))
+                        .padding(.leading, 6)
+
+                    VStack(spacing: 18) {
+                        TextField("Name", text: $counter.name)
+                            .font(.title3.weight(.medium))
+                            .padding(14)
+                            .background(Color.white.opacity(0.9))
+                            .cornerRadius(12)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0).opacity(0.18), lineWidth: 1.5)
+                            )
+
+                        HStack(spacing: 12) {
+                            Text("Step:")
+                                .font(.body.weight(.medium))
+                            Text(String(format: "%.1f", counter.step))
+                                .font(.body.weight(.bold))
+                                .foregroundColor(Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0))
+                                .frame(width: 48, alignment: .trailing)
+                            Spacer()
+                            HStack(spacing: 8) {
+                                Button(action: {
+                                    let new = (counter.step - 0.1)
+                                    counter.step = new >= 0.1 ? (round(new * 10) / 10) : 0.1
+                                }) {
+                                    Image(systemName: "minus")
+                                        .font(.body.weight(.semibold))
+                                        .frame(width: 36, height: 32)
+                                        .background(Color.white.opacity(0.9))
+                                        .cornerRadius(8)
+                                }
+
+                                Button(action: {
+                                    let new = (counter.step + 0.1)
+                                    counter.step = new <= 1000 ? (round(new * 10) / 10) : 1000
+                                }) {
+                                    Image(systemName: "plus")
+                                        .font(.body.weight(.semibold))
+                                        .frame(width: 36, height: 32)
+                                        .background(Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0))
+                                        .foregroundColor(.white)
+                                        .cornerRadius(8)
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 6)
+                    }
+                    .padding(18)
+                    .background(Color.white.opacity(0.85))
+                    .cornerRadius(18)
+                    .shadow(color: Color.black.opacity(0.06), radius: 6, x: 0, y: 2)
                 }
+                .padding(.horizontal, 16)
+
+                Spacer()
+
+                HStack(spacing: 18) {
+                    Button(action: { dismiss() }) {
+                        Text("Cancel")
+                            .font(.body.bold())
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 14)
+                            .background(Color.gray.opacity(0.35))
+                            .cornerRadius(14)
+                    }
+                    Button(action: {
+                        state.addCounter(counter)
+                        dismiss()
+                    }) {
+                        Text("Save")
+                            .font(.body.bold())
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 14)
+                            .background(
+                                LinearGradient(
+                                    colors: [
+                                        Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                                        Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                                    ],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .cornerRadius(14)
+                            .shadow(color: Color.black.opacity(0.10), radius: 4, x: 0, y: 2)
+                    }
+                    .disabled(counter.name.trimmingCharacters(in: .whitespaces).isEmpty)
+                }
+                .padding(.horizontal, 16)
+                .padding(.bottom, 18)
             }
         }
-        .navigationTitle("New Counter")
-        .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") { dismiss() }
-            }
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Save") {
-                    state.addCounter(counter)
-                    dismiss()
-                }
-                .disabled(counter.name.trimmingCharacters(in: .whitespaces).isEmpty)
-            }
-        }
+        .gradientNavigationTitle("New Counter")
     }
 }
 
@@ -296,47 +624,118 @@ private struct StopwatchView: View {
     private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
     var body: some View {
-        VStack(spacing: 32) {
-            Text(timeString)
-                .font(.system(size: 56, weight: .medium, design: .monospaced))
-                .monospacedDigit()
-                .padding(.top, 40)
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
 
-            HStack(spacing: 24) {
-                Button(isRunning ? "Pause" : "Start", action: toggle)
-                    .buttonStyle(.borderedProminent)
-                    .controlSize(.large)
-
-                Button("Reset", action: reset)
-                    .buttonStyle(.bordered)
-                    .disabled(!isRunning && elapsed == 0)
-            }
-
-            if elapsed > 0 {
-                Button("Save to Log") {
-                    state.appendStopwatchLog(duration: elapsed)
+            VStack(spacing: 36) {
+                Spacer(minLength: 32)
+                ZStack {
+                    Circle()
+                        .stroke(
+                            LinearGradient(
+                                colors: [
+                                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                                ],
+                                startPoint: .top,
+                                endPoint: .bottom
+                            ),
+                            lineWidth: 6
+                        )
+                        .shadow(color: Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0).opacity(0.25), radius: 18, x: 0, y: 0)
+                        .frame(width: 200, height: 200)
+                    Circle()
+                        .fill(Color.white.opacity(0.85))
+                        .frame(width: 188, height: 188)
+                    Text(timeString)
+                        .font(.system(size: 56, weight: .medium, design: .monospaced))
+                        .monospacedDigit()
+                        .foregroundColor(Color(red: 40.0/255.0, green: 115.0/255.0, blue: 150.0/255.0))
                 }
-                .buttonStyle(.bordered)
+                .padding(.top, 16)
 
-                if #available(iOS 16.0, *) {
-                    ShareLink(item: exportText) {
-                        Label("Export to Notes", systemImage: "square.and.arrow.up")
-                    }
-                    .buttonStyle(.bordered)
-                } else {
-                    Button {
-                        exportLegacy()
-                    } label: {
-                        Label("Export to Notes", systemImage: "square.and.arrow.up")
-                    }
-                    .buttonStyle(.bordered)
+                HStack(spacing: 24) {
+                    Button(isRunning ? "Pause" : "Start", action: toggle)
+                        .font(.title3.bold())
+                        .foregroundColor(.white)
+                        .frame(width: 110, height: 48)
+                        .background(
+                            LinearGradient(
+                                colors: [
+                                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                                ],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                        .shadow(color: Color.black.opacity(0.10), radius: 4, x: 0, y: 2)
+
+                    Button("Reset", action: reset)
+                        .font(.title3.bold())
+                        .foregroundColor(isRunning || elapsed > 0 ? Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0) : .gray)
+                        .frame(width: 110, height: 48)
+                        .background(Color.white.opacity(0.85))
+                        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                        .shadow(color: Color.black.opacity(0.06), radius: 4, x: 0, y: 2)
+                        .disabled(!isRunning && elapsed == 0)
                 }
-            }
 
-            Spacer()
+                if elapsed > 0 {
+                    Button(action: { state.appendStopwatchLog(duration: elapsed) }) {
+                        Label("Save to Log", systemImage: "plus.rectangle.on.rectangle")
+                            .font(.body.bold())
+                            .foregroundColor(Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0))
+                            .padding(.horizontal, 18)
+                            .padding(.vertical, 10)
+                            .background(Color.white.opacity(0.85))
+                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                            .shadow(color: Color.black.opacity(0.06), radius: 2, x: 0, y: 1)
+                    }
+
+                    if #available(iOS 16.0, *) {
+                        ShareLink(item: exportText) {
+                            Label("Export to Notes", systemImage: "square.and.arrow.up")
+                                .font(.body.bold())
+                                .foregroundColor(Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0))
+                                .padding(.horizontal, 18)
+                                .padding(.vertical, 10)
+                                .background(Color.white.opacity(0.85))
+                                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                .shadow(color: Color.black.opacity(0.06), radius: 2, x: 0, y: 1)
+                        }
+                    } else {
+                        Button {
+                            exportLegacy()
+                        } label: {
+                            Label("Export to Notes", systemImage: "square.and.arrow.up")
+                                .font(.body.bold())
+                                .foregroundColor(Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0))
+                                .padding(.horizontal, 18)
+                                .padding(.vertical, 10)
+                                .background(Color.white.opacity(0.85))
+                                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                .shadow(color: Color.black.opacity(0.06), radius: 2, x: 0, y: 1)
+                        }
+                    }
+                }
+
+                Spacer()
+            }
+            .padding(.horizontal, 24)
         }
         .onReceive(timer) { _ in tick() }
-    .navigationTitle("Stopwatch")
+        .gradientNavigationTitle("Stopwatch")
     }
 
     private func toggle() {
@@ -390,5 +789,39 @@ private struct StopwatchView: View {
 
     private func exportLegacy() {
         UIPasteboard.general.string = exportText
+    }
+}
+
+// MARK: - View Extension for Conditional Modifiers
+extension View {
+    @ViewBuilder
+    func apply<Content: View>(@ViewBuilder transform: (Self) -> Content) -> some View {
+        transform(self)
+    }
+    
+    func gradientNavigationTitle(_ title: String) -> some View {
+        if #available(iOS 16.0, *) {
+            return AnyView(
+                self.navigationTitle(title)
+                    .toolbarColorScheme(.dark, for: .navigationBar)
+                    .toolbarBackground(
+                        LinearGradient(
+                            gradient: Gradient(colors: [
+                                Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+                                Color(red: 0.0 / 255.0, green: 140.0 / 255.0, blue: 180.0 / 255.0)
+                            ]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        ),
+                        for: .navigationBar
+                    )
+                    .toolbarBackground(.visible, for: .navigationBar)
+            )
+        } else {
+            return AnyView(
+                self.navigationTitle(title)
+                    .navigationBarTitleDisplayMode(.automatic)
+            )
+        }
     }
 }

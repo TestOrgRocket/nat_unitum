@@ -1,0 +1,208 @@
+{
+  "" : {
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ChickCare-master.dia",
+    "emit-module-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ChickCare-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ChickCare-master-emit-module.dia",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ChickCare-master.swiftdeps"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/ChickenCareApp.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ChickenCareApp.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ChickenCareApp.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ChickenCareApp.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ChickenCareApp.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ChickenCareApp.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ChickenCareApp.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ChickenCareApp.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ChickenCareApp~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/ContentView.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/AppModule+MeasurementToolkit.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/AppModule+MeasurementToolkit.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/AppModule+MeasurementToolkit.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/AppModule+MeasurementToolkit.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/AppModule+MeasurementToolkit.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/AppModule+MeasurementToolkit.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/AppModule+MeasurementToolkit.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/AppModule+MeasurementToolkit.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/AppModule+MeasurementToolkit~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/Color+PanelBackground.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/Color+PanelBackground.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/Color+PanelBackground.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/Color+PanelBackground.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/Color+PanelBackground.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/Color+PanelBackground.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/Color+PanelBackground.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/Color+PanelBackground.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/Color+PanelBackground~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/ConversionService.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConversionService.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConversionService.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConversionService.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConversionService.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConversionService.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConversionService.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConversionService.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConversionService~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/ConverterRootView.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConverterRootView.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConverterRootView.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConverterRootView.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConverterRootView.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConverterRootView.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConverterRootView.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConverterRootView.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ConverterRootView~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/CountersRootView.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CountersRootView.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CountersRootView.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CountersRootView.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CountersRootView.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CountersRootView.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CountersRootView.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CountersRootView.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CountersRootView~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/CustomUnitsRootView.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CustomUnitsRootView.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CustomUnitsRootView.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CustomUnitsRootView.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CustomUnitsRootView.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CustomUnitsRootView.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CustomUnitsRootView.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CustomUnitsRootView.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/CustomUnitsRootView~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/FavoritesHistoryView.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesHistoryView.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesHistoryView.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesHistoryView.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesHistoryView.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesHistoryView.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesHistoryView.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesHistoryView.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesHistoryView~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementCatalog.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementCatalog.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementCatalog.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementCatalog.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementCatalog.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementCatalog.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementCatalog.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementCatalog.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementCatalog~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitIntents.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitIntents.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitIntents.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitIntents.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitIntents.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitIntents.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitIntents.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitIntents.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitIntents~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitModels.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitModels.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitModels.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitModels.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitModels.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitModels.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitModels.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitModels.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitModels~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitRootView.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitRootView.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitRootView.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitRootView.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitRootView.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitRootView.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitRootView.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitRootView.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitRootView~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitState.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitState.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitState.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitState.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitState.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitState.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitState.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitState.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitState~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitStorage.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitStorage.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitStorage.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitStorage.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitStorage.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitStorage.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitStorage.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitStorage.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitStorage~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/MeasurementToolkitWidgets.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitWidgets.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitWidgets.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitWidgets.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitWidgets.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitWidgets.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitWidgets.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitWidgets.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/MeasurementToolkitWidgets~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/ReferenceRootView.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ReferenceRootView.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ReferenceRootView.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ReferenceRootView.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ReferenceRootView.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ReferenceRootView.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ReferenceRootView.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ReferenceRootView.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/ReferenceRootView~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/AppModule/SettingsRootView.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/SettingsRootView.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/SettingsRootView.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/SettingsRootView.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/SettingsRootView.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/SettingsRootView.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/SettingsRootView.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/SettingsRootView.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/SettingsRootView~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/ChickenCare/Utillity/Views/FavoritesAndHistoryView.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesAndHistoryView.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesAndHistoryView.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesAndHistoryView.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesAndHistoryView.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesAndHistoryView.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesAndHistoryView.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesAndHistoryView.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/FavoritesAndHistoryView~partial.swiftmodule"
+  },
+  "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/kristinapozhoha/Desktop/Projects/ForAnvar_Delete/nat_unitum/build/Build/Intermediates.noindex/ChickCare.build/Debug-iphonesimulator/ChickCare.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

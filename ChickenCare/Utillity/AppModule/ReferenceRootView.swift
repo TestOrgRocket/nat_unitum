@@ -45,49 +45,73 @@ struct ReferenceRootView: View {
     ]
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
-                ReferenceSection(title: "SI prefixes") {
-                    ReferenceTable(headers: ["Prefix", "Name", "Multiplier"], rows: prefixes.map { [$0.symbol, $0.name, $0.factor] })
-                }
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 4.0 / 255.0, green: 113.0 / 255.0, blue: 143.0 / 255.0),
+                    Color(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 216.0 / 255.0),
+                    Color(red: 72.0 / 255.0, green: 202.0 / 255.0, blue: 228.0 / 255.0)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            
+            ScrollView {
+                VStack(alignment: .leading, spacing: 24) {
+                    ReferenceSection(title: "SI prefixes") {
+                        ReferenceTable(headers: ["Prefix", "Name", "Multiplier"], rows: prefixes.map { [$0.symbol, $0.name, $0.factor] })
+                    }
 
-                ReferenceSection(title: "Base quantities") {
-                    ReferenceTable(headers: ["Quantity", "Symbol", "Unit"], rows: baseUnits.map { [$0.quantity, $0.symbol, $0.unit] })
-                }
+                    ReferenceSection(title: "Base quantities") {
+                        ReferenceTable(headers: ["Quantity", "Symbol", "Unit"], rows: baseUnits.map { [$0.quantity, $0.symbol, $0.unit] })
+                    }
 
-                ReferenceSection(title: "Constants") {
-                    VStack(alignment: .leading, spacing: 12) {
-                        ForEach(constants, id: \.name) { constant in
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(constant.name)
-                                    .font(.headline)
-                                Text(constant.value)
-                                    .font(.body.weight(.semibold))
-                                Text(constant.notes)
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
+                    ReferenceSection(title: "Constants") {
+                        VStack(alignment: .leading, spacing: 12) {
+                            ForEach(constants, id: \.name) { constant in
+                                VStack(alignment: .leading, spacing: 6) {
+                                    Text(constant.name)
+                                        .font(.headline)
+                                        .foregroundColor(.primary)
+                                    Text(constant.value)
+                                        .font(.body.weight(.semibold))
+                                        .foregroundColor(.primary)
+                                    Text(constant.notes)
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                }
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                        .fill(Color.panelBackground)
+                                )
+                                .shadow(color: Color.black.opacity(0.04), radius: 6, x: 0, y: 3)
                             }
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 16, style: .continuous).fill(Color(uiColor: .secondarySystemBackground)))
                         }
                     }
                 }
+                .padding()
             }
-            .padding()
         }
-        .navigationTitle("Reference")
+        .gradientNavigationTitle("Reference")
     }
 }
-
 private struct ReferenceSection<Content: View>: View {
     let title: String
     @ViewBuilder let content: Content
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(title)
-                .font(.title3.weight(.semibold))
+            HStack {
+                Text(title.uppercased())
+                    .font(.caption.weight(.semibold))
+                    .foregroundColor(Color(red: 40/255, green: 115/255, blue: 150/255))
+                Spacer()
+            }
+            .padding(.leading, 4)
             content
+                .padding(.top, 4)
         }
     }
 }
@@ -97,32 +121,44 @@ private struct ReferenceTable: View {
     let rows: [[String]]
 
     var body: some View {
+        // Card-style table: white rounded background with subtle shadow and cyan headers
         VStack(spacing: 0) {
+            // Header row
             HStack {
                 ForEach(Array(headers.enumerated()), id: \.offset) { _, header in
-                    Text(header)
+                    Text(header.uppercased())
                         .font(.caption.weight(.semibold))
-                        .foregroundColor(.secondary)
+                        .foregroundColor(Color(red: 40/255, green: 115/255, blue: 150/255))
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
             .padding(12)
-            .background(Color(uiColor: .tertiarySystemFill))
+            .background(Color.clear)
 
-            ForEach(Array(rows.enumerated()), id: \.offset) { _, row in
-                HStack {
+            Divider()
+
+            // Rows
+            ForEach(Array(rows.enumerated()), id: \.offset) { index, row in
+                HStack(spacing: 0) {
                     ForEach(Array(row.enumerated()), id: \.offset) { _, value in
                         Text(value)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.vertical, 8)
+                            .padding(.vertical, 14)
                     }
                 }
                 .padding(.horizontal, 12)
-                .background(Color(uiColor: .systemBackground))
-                Divider()
+                .background(Color.panelBackground)
+
+                if index != rows.count - 1 {
+                    Divider()
+                }
             }
         }
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(Color.panelBackground)
+        )
+        .shadow(color: Color.black.opacity(0.06), radius: 8, x: 0, y: 4)
         .overlay(
             RoundedRectangle(cornerRadius: 16, style: .continuous)
                 .stroke(Color(uiColor: .separator), lineWidth: 0.5)
